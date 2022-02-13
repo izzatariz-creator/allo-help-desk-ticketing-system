@@ -57,10 +57,10 @@
                                                 <td>{{ $user->email }}</td>
                                                 <td>{{ $user->temppass }}</td>
                                                 <td>
-                                                    {{-- Edit Button --}}
-                                                    <a href="#"
+                                                    {{-- Edit Button, Pass User ID --}}
+                                                    <a href="{{ route('user.edit',$user->id) }}" 
                                                         class="btn btn-info">Edit</a>
-                                                    {{-- Delete Button --}}
+                                                    {{-- Delete Button, Pass User ID --}}
                                                     <a href="#" class="btn btn-danger"
                                                         id="delete">Delete</a>
                                                 </td>

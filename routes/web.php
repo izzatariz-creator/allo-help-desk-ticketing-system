@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Backend\User\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,7 +31,12 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
     // Start Of Auth Middleware Group
     Route::group(['middleware' => 'auth'], function () {
 
-        
+        // Start of Group for User Management Routes
+        Route::prefix('user')->group(function () {
+            Route::get('/view', [UserController::class, 'UserView'])->name('user.view');
+            Route::get('/add', [UserController::class, 'UserAdd'])->name('user.add');
+        });
+        // End of Group for User Management Routes
 
     }); //End Of Auth Middleware Group
 

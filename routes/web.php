@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Backend\User\ProfileController;
 use App\Http\Controllers\Backend\User\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,6 +42,13 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
             Route::get('/delete/{id}', [UserController::class, 'UserDelete'])->name('user.delete');
         });
         // End of Group for User Management Routes
+
+        // Start of Group for Profile Management Routes
+        Route::prefix('profile')->group(function () {
+            Route::get('/view', [ProfileController::class, 'ProfileView'])->name('profile.view');
+            Route::get('/edit', [ProfileController::class, 'ProfileEdit'])->name('profile.edit');
+        });
+        // End of Group for Profile Management Routes
 
     }); //End Of Auth Middleware Group
 

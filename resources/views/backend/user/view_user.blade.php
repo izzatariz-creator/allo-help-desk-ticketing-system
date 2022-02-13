@@ -52,10 +52,10 @@
                                         @foreach ($allData as $key => $user)
                                             <tr>
                                                 <td>{{ $key+1 }}</td>
-                                                <td>Role</td>
+                                                <td>{{ $user->role }}</td>
                                                 <td>{{ $user->name }}</td>
                                                 <td>{{ $user->email }}</td>
-                                                <td>Password</td>
+                                                <td>{{ $user->temppass }}</td>
                                                 <td>
                                                     {{-- Edit Button --}}
                                                     <a href="#"

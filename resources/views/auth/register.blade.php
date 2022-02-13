@@ -154,7 +154,7 @@
                                 </form>
 
                                 <p class="text-center mt-2"><span>Already have an account?</span><a
-                                        href="auth-login-cover.html"><span>&nbsp;Sign in instead</span></a></p>
+                                        href="{{ route('login') }}"><span>&nbsp;Sign in instead</span></a></p>
                                 <div class="divider my-2">
                                     <div class="divider-text">or</div>
                                 </div>

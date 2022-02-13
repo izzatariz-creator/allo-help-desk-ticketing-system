@@ -38,6 +38,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
             Route::post('/store', [UserController::class, 'UserStore'])->name('user.store');
             Route::get('/edit/{id}', [UserController::class, 'UserEdit'])->name('user.edit');
             Route::post('/update/{id}', [UserController::class, 'UserUpdate'])->name('user.update');
+            Route::get('/delete/{id}', [UserController::class, 'UserDelete'])->name('user.delete');
         });
         // End of Group for User Management Routes
 

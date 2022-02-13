@@ -61,7 +61,7 @@
                                                     <a href="{{ route('user.edit',$user->id) }}" 
                                                         class="btn btn-info">Edit</a>
                                                     {{-- Delete Button, Pass User ID --}}
-                                                    <a href="#" class="btn btn-danger"
+                                                    <a href="{{ route('user.delete',$user->id) }}" class="btn btn-danger"
                                                         id="delete">Delete</a>
                                                 </td>
                                             </tr>

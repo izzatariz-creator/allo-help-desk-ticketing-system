@@ -19,22 +19,22 @@
 
             <li>
                 <a href="index.html">
-                    <i data-feather="pie-chart"></i>
+                    <i data-feather="home"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
 
             <li class="treeview">
                 <a href="#">
-                    <i data-feather="message-circle"></i>
-                    <span>Application</span>
+                    <i data-feather="user"></i>
+                    <span>Manage User</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-right pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="chat.html"><i class="ti-more"></i>Chat</a></li>
-                    <li><a href="calendar.html"><i class="ti-more"></i>Calendar</a></li>
+                    <li><a href="{{ route('user.view') }}"><i class="ti-more"></i>View User</a></li>
+                    <li><a href="calendar.html"><i class="ti-more"></i>Add User</a></li>
                 </ul>
             </li>
 
@@ -295,7 +295,7 @@
         <a href="mailbox_inbox.html" class="link" data-toggle="tooltip" title="" data-original-title="Email"><i
                 class="ti-email"></i></a>
         <!-- item-->
-        <a href="javascript:void(0)" class="link" data-toggle="tooltip" title="" data-original-title="Logout"><i
+        <a href="{{ route('admin.logout') }}" class="link" data-toggle="tooltip" title="" data-original-title="Logout"><i
                 class="ti-lock"></i></a>
     </div>
 </aside>

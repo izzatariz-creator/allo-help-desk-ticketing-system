@@ -108,7 +108,7 @@
                                         <label class="form-label" for="register-username">Username</label>
                                         <input class="form-control" id="name" type="text"
                                         name="name" placeholder="johndoe"
-                                            aria-describedby="register-username" required autofocus autocomplete="name" tabindex="1" />
+                                            aria-describedby="register-username" required autofocus="name" tabindex="1" />
                                     </div>
 
                                     <div class="mb-1">
@@ -122,7 +122,7 @@
                                         <label class="form-label" for="register-password">Password</label>
                                         <div class="input-group input-group-merge form-password-toggle">
                                             <input class="form-control form-control-merge" id="password"
-                                                type="password" name="password" placeholder="············" required autocomplete="new-password"
+                                                type="password" name="password" placeholder="············" required
                                                 aria-describedby="register-password" tabindex="3" /><span
                                                 class="input-group-text cursor-pointer"><i
                                                     data-feather="eye"></i></span>
@@ -133,7 +133,7 @@
                                         <label class="form-label" for="register-password">Password</label>
                                         <div class="input-group input-group-merge form-password-toggle">
                                             <input class="form-control form-control-merge" id="password_confirmation"
-                                            type="password" name="password_confirmation" placeholder="············" required autocomplete="new-password"
+                                            type="password" name="password_confirmation" placeholder="············" required
                                                 aria-describedby="register-password" tabindex="3" /><span
                                                 class="input-group-text cursor-pointer"><i
                                                     data-feather="eye"></i></span>
@@ -143,7 +143,7 @@
                                     <div class="mb-1">
                                         <div class="form-check">
                                             <input class="form-check-input" id="register-privacy-policy" type="checkbox"
-                                                tabindex="4" />
+                                                tabindex="4"/>
                                             <label class="form-check-label" for="register-privacy-policy">I agree to<a
                                                     href="#">&nbsp;privacy policy & terms</a></label>
                                         </div>

@@ -48,6 +48,8 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
             Route::get('/view', [ProfileController::class, 'ProfileView'])->name('profile.view');
             Route::get('/edit', [ProfileController::class, 'ProfileEdit'])->name('profile.edit');
             Route::post('/store', [ProfileController::class, 'ProfileStore'])->name('profile.store');
+            Route::get('/password', [ProfileController::class, 'PasswordView'])->name('profile.password');
+            Route::post('/password/update', [ProfileController::class, 'PasswordUpdate'])->name('profile.password.update');
         });
         // End of Group for Profile Management Routes
 

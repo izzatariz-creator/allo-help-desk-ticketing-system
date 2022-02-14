@@ -4,7 +4,7 @@
 
         <div class="user-profile">
             <div class="ulogo">
-                <a href="index.html">
+                <a href="{{ route('dashboard') }}">
                     <!-- logo for regular state and mobile devices -->
                     <div class="d-flex align-items-center justify-content-center">
                         <img src="{{ asset('backend/images/logo-dark.png') }}" alt="">
@@ -18,7 +18,7 @@
         <ul class="sidebar-menu" data-widget="tree">
 
             <li>
-                <a href="index.html">
+                <a href="{{ route('dashboard') }}">
                     <i data-feather="home"></i>
                     <span>Dashboard</span>
                 </a>
@@ -48,7 +48,7 @@
                 <ul class="treeview-menu">
                     <li><a href="{{ route('profile.view') }}"><i class="ti-more"></i>My Profile</a></li>
                     <li><a href="{{ route('profile.edit') }}"><i class="ti-more"></i>Edit Profile</a></li>
-                    <li><a href="#"><i class="ti-more"></i>Change Password</a></li>
+                    <li><a href="{{ route('profile.password') }}"><i class="ti-more"></i>Change Password</a></li>
                 </ul>
             </li>
 

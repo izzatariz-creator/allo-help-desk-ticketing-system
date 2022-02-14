@@ -105,7 +105,7 @@
                                     <div class="mb-1">
                                         <label class="form-label" for="login-email">Email</label>
                                         <input class="form-control" id="email" type="email" name="email" required autofocus
-                                            placeholder="john@example.com" aria-describedby="login-email" autofocus=""
+                                            placeholder="john@example.com" aria-describedby="login-email"
                                             tabindex="1" />
                                     </div>
 
@@ -118,7 +118,7 @@
 
                                         <div class="input-group input-group-merge form-password-toggle">
                                             <input class="form-control form-control-merge" id="password"
-                                                type="password" name="password" placeholder="············" required autocomplete="current-password"
+                                                type="password" name="password" placeholder="············" required
                                                 aria-describedby="login-password" tabindex="2" /><span
                                                 class="input-group-text cursor-pointer"><i
                                                     data-feather="eye"></i></span>

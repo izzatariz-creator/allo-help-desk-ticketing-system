@@ -84,8 +84,7 @@
                     <div class="row">
                         <div class="col-12">
                             <a href="" style="float: right;" class="btn btn-rounded btn-success mb-5"> Edit Equipment</a>
-                            <h4 class="description-header">Equipment Details</h4> 
-                            <br>
+                            <h4 class="description-header" style="padding-top: 10px;">Equipment Details</h4> 
                             <hr style="width:100%;text-align:left;margin-left:0"> 
                             <div>
                                 <p>PLACEHOLDER #1:<span class="text-gray pl-10">DATA #1</span> </p>

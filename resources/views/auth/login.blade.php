@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
-    <title>Login Page - Vuexy - Bootstrap HTML admin template</title>
+    <title>Login Page - Allo Help Desk Ticketing System</title>
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('app-assets/images/ico/favicon.ico') }}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600"
         rel="stylesheet">
@@ -84,7 +84,7 @@
                                     </g>
                                 </g>
                             </svg>
-                            <h2 class="brand-text text-primary ms-1">Vuexy</h2>
+                            <h2 class="brand-text text-primary ms-1">Allo HDTS</h2>
                         </a>
                         <!-- /Brand logo-->
                         <!-- Left Text-->
@@ -97,15 +97,15 @@
                         <!-- Login-->
                         <div class="d-flex col-lg-4 align-items-center auth-bg px-2 p-lg-5">
                             <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
-                                <h2 class="card-title fw-bold mb-1">Welcome to Vuexy! 👋</h2>
+                                <h2 class="card-title fw-bold mb-1">Welcome to Allo Help Desk Ticketing System</h2>
                                 <p class="card-text mb-2">Please sign-in to your account and start the adventure</p>
                                 <form class="auth-login-form mt-2" action="{{ route('login') }}" method="POST">
                                     @csrf
 
                                     <div class="mb-1">
                                         <label class="form-label" for="login-email">Email</label>
-                                        <input class="form-control" id="email" type="email" name="email" required autofocus
-                                            placeholder="john@example.com" aria-describedby="login-email"
+                                        <input class="form-control" id="email" type="email" name="email" required
+                                            autofocus placeholder="john@example.com" aria-describedby="login-email"
                                             tabindex="1" />
                                     </div>
 
@@ -117,8 +117,8 @@
                                         </div>
 
                                         <div class="input-group input-group-merge form-password-toggle">
-                                            <input class="form-control form-control-merge" id="password"
-                                                type="password" name="password" placeholder="············" required
+                                            <input class="form-control form-control-merge" id="password" type="password"
+                                                name="password" placeholder="············" required
                                                 aria-describedby="login-password" tabindex="2" /><span
                                                 class="input-group-text cursor-pointer"><i
                                                     data-feather="eye"></i></span>
@@ -127,8 +127,8 @@
 
                                     <div class="mb-1">
                                         <div class="form-check">
-                                            <input class="form-check-input" id="remember_me" name="remember" type="checkbox"
-                                                tabindex="3" />
+                                            <input class="form-check-input" id="remember_me" name="remember"
+                                                type="checkbox" tabindex="3" />
                                             <label class="form-check-label" for="remember-me"> Remember Me</label>
                                         </div>
                                     </div>
@@ -136,16 +136,11 @@
                                     <button type="submit" class="btn btn-primary w-100" tabindex="4">Sign in</button>
 
                                 </form>
-                                <p class="text-center mt-2"><span>New on our platform?</span><a
-                                        href="{{ route('register') }}"><span>&nbsp;Create an account</span></a></p>
                                 <div class="divider my-2">
                                     <div class="divider-text">or</div>
                                 </div>
-                                <div class="auth-footer-btn d-flex justify-content-center"><a class="btn btn-facebook"
-                                        href="#"><i data-feather="facebook"></i></a><a class="btn btn-twitter white"
-                                        href="#"><i data-feather="twitter"></i></a><a class="btn btn-google" href="#"><i
-                                            data-feather="mail"></i></a><a class="btn btn-github" href="#"><i
-                                            data-feather="github"></i></a></div>
+                                <p class="text-center mt-2"><span>New on our platform?</span><a
+                                        href="{{ route('register') }}"><span>&nbsp;Create an account</span></a></p>
                             </div>
                         </div>
                         <!-- /Login-->

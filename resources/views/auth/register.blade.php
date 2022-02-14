@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
-    <title>Register Page - Vuexy - Bootstrap HTML admin template</title>
+    <title>Register Page - Allo Help Desk Ticketing System</title>
     <link rel="apple-touch-icon" href="{{ asset('app-assets/images/ico/apple-icon-120.png') }}">
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('app-assets/images/ico/favicon.ico') }}">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600"
@@ -85,7 +85,7 @@
                                     </g>
                                 </g>
                             </svg>
-                            <h2 class="brand-text text-primary ms-1">Vuexy</h2>
+                            <h2 class="brand-text text-primary ms-1">Allo HDTS</h2>
                         </a>
                         <!-- /Brand logo-->
                         <!-- Left Text-->
@@ -99,7 +99,7 @@
                         <div class="d-flex col-lg-4 align-items-center auth-bg px-2 p-lg-5">
                             <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
                                 <h2 class="card-title fw-bold mb-1">Adventure starts here 🚀</h2>
-                                <p class="card-text mb-2">Make your app management easy and fun!</p>
+                                <p class="card-text mb-2">Fill In Required Fields</p>
 
                                 <form class="auth-register-form mt-2" action="{{ route('register') }}" method="POST">
                                     @csrf
@@ -153,16 +153,11 @@
 
                                 </form>
 
-                                <p class="text-center mt-2"><span>Already have an account?</span><a
-                                        href="{{ route('login') }}"><span>&nbsp;Sign in instead</span></a></p>
                                 <div class="divider my-2">
                                     <div class="divider-text">or</div>
                                 </div>
-                                <div class="auth-footer-btn d-flex justify-content-center"><a class="btn btn-facebook"
-                                        href="#"><i data-feather="facebook"></i></a><a class="btn btn-twitter white"
-                                        href="#"><i data-feather="twitter"></i></a><a class="btn btn-google" href="#"><i
-                                            data-feather="mail"></i></a><a class="btn btn-github" href="#"><i
-                                            data-feather="github"></i></a></div>
+                                <p class="text-center mt-2"><span>Already have an account?</span><a
+                                    href="{{ route('login') }}"><span>&nbsp;Sign in instead</span></a></p>
                             </div>
                         </div>
                         <!-- /Register-->

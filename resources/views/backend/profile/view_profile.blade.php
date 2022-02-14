@@ -34,10 +34,7 @@
                         <div class="widget-user-header bg-white">
                             <h3 class="widget-user-username" style="text-align: center">{{ $user->name }}</h3>
 
-                            <a href="" style="float: right;" class="btn btn-rounded btn-success mb-5"> Edit Profile</a>
-
-                            <h6 class="widget-user-desc">User Role : {{ $user->role }}</h6>
-                            <h6 class="widget-user-desc">User Email : {{ $user->email }}</h6>
+                            <a href="{{ route('profile.edit') }}" style="float: right;" class="btn btn-rounded btn-success mb-5"> Edit Profile</a>
 
                         </div>
 
@@ -50,24 +47,24 @@
                             <div class="row">
                                 <div class="col-sm-4">
                                     <div class="description-block">
-                                        <h5 class="description-header">Mobile No</h5>
-                                        <span class="description-text">Mobile</span>
+                                        <h5 class="description-header">Email Address</h5>
+                                        <span class="description-text">{{ $user->email }}</span>
                                     </div>
                                     <!-- /.description-block -->
                                 </div>
                                 <!-- /.col -->
                                 <div class="col-sm-4 br-1 bl-1">
                                     <div class="description-block">
-                                        <h5 class="description-header">Address</h5>
-                                        <span class="description-text">{{ $user->address }}</span>
+                                        <h5 class="description-header">Contact Number</h5>
+                                        <span class="description-text">{{ $user->contact_number }}</span>
                                     </div>
                                     <!-- /.description-block -->
                                 </div>
                                 <!-- /.col -->
                                 <div class="col-sm-4">
                                     <div class="description-block">
-                                        <h5 class="description-header">Placeholder</h5>
-                                        <span class="description-text">Placeholder</span>
+                                        <h5 class="description-header">Address</h5>
+                                        <span class="description-text">{{ $user->address }}</span>
                                     </div>
                                     <!-- /.description-block -->
                                 </div>
@@ -86,10 +83,14 @@
                 <div class="box-body box-profile">
                     <div class="row">
                         <div class="col-12">
+                            <a href="" style="float: right;" class="btn btn-rounded btn-success mb-5"> Edit Equipment</a>
+                            <h4 class="description-header">Equipment Details</h4> 
+                            <br>
+                            <hr style="width:100%;text-align:left;margin-left:0"> 
                             <div>
-                                <p>Email :<span class="text-gray pl-10">David@yahoo.com</span> </p>
-                                <p>Phone :<span class="text-gray pl-10">+11 123 456 7890</span></p>
-                                <p>Address :<span class="text-gray pl-10">123, Lorem Ipsum, Florida, USA</span></p>
+                                <p>PLACEHOLDER #1:<span class="text-gray pl-10">DATA #1</span> </p>
+                                <p>PLACEHOLDER #2:<span class="text-gray pl-10">DATA #2</span></p>
+                                <p>PLACEHOLDER #3:<span class="text-gray pl-10">DATA #3</span></p>
                             </div>
                         </div>
                     </div>

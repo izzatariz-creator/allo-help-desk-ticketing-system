@@ -1,3 +1,8 @@
+@php
+$prefix = Request::route()->getPrefix();
+$route = Route::current()->getName();
+@endphp
+
 <aside class="main-sidebar">
     <!-- sidebar-->
     <section class="sidebar">
@@ -17,14 +22,14 @@
         <!-- sidebar menu-->
         <ul class="sidebar-menu" data-widget="tree">
 
-            <li>
+            <li class="{{ ($route == 'dashboard')?'active':'' }}">
                 <a href="{{ route('dashboard') }}">
                     <i data-feather="home"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
 
-            <li class="treeview">
+            <li class="treeview {{ ($prefix == '/user')?'active':'' }}">
                 <a href="#">
                     <i data-feather="user"></i>
                     <span>Manage User</span>
@@ -33,12 +38,12 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{ route('user.view') }}"><i class="ti-more"></i>View User</a></li>
-                    <li><a href="{{ route('user.add') }}"><i class="ti-more"></i>Add User</a></li>
+                    <li class="{{ ($route == 'user.view')?'active':'' }}"><a href="{{ route('user.view') }}"><i class="ti-more"></i>View User</a></li>
+                    <li class="{{ ($route == 'user.add')?'active':'' }}"><a href="{{ route('user.add') }}"><i class="ti-more"></i>Add User</a></li>
                 </ul>
             </li>
 
-            <li class="treeview">
+            <li class="treeview {{ ($prefix == '/profile')?'active':'' }}">
                 <a href="#">
                     <i data-feather="settings"></i> <span>Manage Profile</span>
                     <span class="pull-right-container">
@@ -46,9 +51,9 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{ route('profile.view') }}"><i class="ti-more"></i>My Profile</a></li>
-                    <li><a href="{{ route('profile.edit') }}"><i class="ti-more"></i>Edit Profile</a></li>
-                    <li><a href="{{ route('profile.password') }}"><i class="ti-more"></i>Change Password</a></li>
+                    <li class="{{ ($route == 'profile.view')?'active':'' }}"><a href="{{ route('profile.view') }}"><i class="ti-more"></i>My Profile</a></li>
+                    <li class="{{ ($route == 'profile.edit')?'active':'' }}"><a href="{{ route('profile.edit') }}"><i class="ti-more"></i>Edit Profile</a></li>
+                    <li class="{{ ($route == 'profile.password')?'active':'' }}"><a href="{{ route('profile.password') }}"><i class="ti-more"></i>Change Password</a></li>
                 </ul>
             </li>
 

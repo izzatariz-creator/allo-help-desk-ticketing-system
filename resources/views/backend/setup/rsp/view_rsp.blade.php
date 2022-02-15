@@ -55,7 +55,7 @@
                                             <td>{{ $key+1 }}</td>
                                             <td> {{ $rsp->name }}</td>
                                             <td>
-                                                <a href=""
+                                                <a href="{{ route('rsp.edit',$rsp->id) }}"
                                                     class="btn btn-info">Edit</a>
                                                 <a href=""
                                                     class="btn btn-danger" id="delete">Delete</a>

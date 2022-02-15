@@ -36,4 +36,29 @@ class RetailServiceProviderController extends Controller
 
         return redirect()->route('rsp.view')->with($notification);
     }
+
+    public function RetailServiceProviderEdit($id)
+    {
+        $editData = RetailServiceProvider::find($id);
+        return view('backend.setup.rsp.edit_class', compact('editData'));
+    }
+
+    public function RetailServiceProviderStoreUpdate(Request $request, $id)
+    {
+        $data = RetailServiceProvider::find($id);
+
+        $validatedData = $request->validate([
+            'name' => 'required|unique:retail_service_providers,name,' . $data->id
+        ]);
+
+        $data->name = $request->name;
+        $data->save();
+
+        $notification = array(
+            'message' => 'RSP Updated Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('rsp.view')->with($notification);
+    }
 }

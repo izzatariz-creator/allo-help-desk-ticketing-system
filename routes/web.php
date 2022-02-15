@@ -61,6 +61,8 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
             Route::get('rsp/view', [RetailServiceProviderController::class, 'RetailServiceProviderView'])->name('rsp.view');
             Route::get('rsp/add', [RetailServiceProviderController::class, 'RetailServiceProviderAdd'])->name('rsp.add');
             Route::post('rsp/store', [RetailServiceProviderController::class, 'RetailServiceProviderStore'])->name('rsp.store');
+            Route::get('rsp/edit/{id}', [RetailServiceProviderController::class, 'RetailServiceProviderEdit'])->name('rsp.edit');
+            Route::post('rsp/edit/store/{id}', [RetailServiceProviderController::class, 'RetailServiceProviderStoreUpdate'])->name('rsp.edit.store');
             // End of Retail Service Provider Management Routes
 
         });

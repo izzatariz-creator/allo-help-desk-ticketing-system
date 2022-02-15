@@ -93,6 +93,20 @@ $route = Route::current()->getName();
                 </ul>
             </li>
 
+            <li class="treeview {{ ($prefix == '/router')?'active':'' }}">
+                <a href="#">
+                    <i data-feather="hard-drive"></i>
+                    <span>Manage Router</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{ ($route == 'router.view')?'active':'' }}"><a href="{{ route('router.view') }}"><i class="ti-more"></i>View Router</a></li>
+                    <li class="{{ ($route == 'router.add')?'active':'' }}"><a href="{{ route('router.add') }}"><i class="ti-more"></i>Add Router</a></li>
+                </ul>
+            </li>
+
         </ul>
     </section>
 

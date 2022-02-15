@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Backend\Setup\ModemController;
 use App\Http\Controllers\Backend\Setup\RetailServiceProviderController;
+use App\Http\Controllers\Backend\Setup\RouterController;
 use App\Http\Controllers\Backend\User\ProfileController;
 use App\Http\Controllers\Backend\User\UserController;
 use Illuminate\Support\Facades\Route;
@@ -66,7 +67,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         });
         // End of Group for Retail Service Provider Management Routes
 
-        // Start of Group for Retail Service Provider Management Routes
+        // Start of Group for Modem Management Routes
         Route::prefix('modem')->group(function () {
             Route::get('view', [ModemController::class, 'ModemView'])->name('modem.view');
             Route::get('add', [ModemController::class, 'ModemAdd'])->name('modem.add');
@@ -75,7 +76,18 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
             Route::post('update/store/{id}', [ModemController::class, 'ModemStoreUpdate'])->name('modem.update.store');
             Route::get('delete/{id}', [ModemController::class, 'ModemDelete'])->name('modem.delete');
         });
-        // End of Group for Retail Service Provider Management Routes
+        // End of Group for Modem Management Routes
+
+        // Start of Group for Router Management Routes
+        Route::prefix('router')->group(function () {
+            Route::get('view', [RouterController::class, 'RouterView'])->name('router.view');
+            Route::get('add', [RouterController::class, 'RouterAdd'])->name('router.add');
+            Route::post('store', [RouterController::class, 'RouterStore'])->name('router.store');
+            Route::get('edit/{id}', [RouterController::class, 'RouterEdit'])->name('router.edit');
+            Route::post('update/store/{id}', [RouterController::class, 'RouterStoreUpdate'])->name('router.update.store');
+            Route::get('delete/{id}', [RouterController::class, 'RouterDelete'])->name('router.delete');
+        });
+        // End of Group for Router Management Routes
 
     }); //End Of Auth Middleware Group
 

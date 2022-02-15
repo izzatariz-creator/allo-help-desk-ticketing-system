@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Backend\Setup\RetailServiceProviderController;
 use App\Http\Controllers\Backend\User\ProfileController;
 use App\Http\Controllers\Backend\User\UserController;
 use Illuminate\Support\Facades\Route;
@@ -52,6 +53,16 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
             Route::post('/password/update', [ProfileController::class, 'PasswordUpdate'])->name('profile.password.update');
         });
         // End of Group for Profile Management Routes
+
+        // Start of Group for Setup Management Routes
+        Route::prefix('setup')->group(function () {
+
+            // Start of Retail Service Provider Management Routes
+            Route::get('rsp/view', [RetailServiceProviderController::class, 'RetailServiceProviderView'])->name('rsp.view');
+            // End of Retail Service Provider Management Routes
+
+        });
+        // End of Group for Setup Management Routes
 
     }); //End Of Auth Middleware Group
 

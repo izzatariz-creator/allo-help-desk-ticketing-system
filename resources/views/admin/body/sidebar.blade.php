@@ -29,6 +29,10 @@ $route = Route::current()->getName();
                 </a>
             </li>
 
+            <hr>
+
+            <li class="header nav-small-cap">General Pages</li>
+
             <li class="treeview {{ ($prefix == '/user')?'active':'' }}">
                 <a href="#">
                     <i data-feather="user"></i>
@@ -57,27 +61,24 @@ $route = Route::current()->getName();
                 </ul>
             </li>
 
-            <li class="header nav-small-cap">User Interface</li>
+            <hr>
 
-            <li class="treeview">
+            <li class="header nav-small-cap">Setup Management</li>
+
+            <li class="treeview {{ ($prefix == '/setup')?'active':'' }}">
                 <a href="#">
-                    <i data-feather="grid"></i>
-                    <span>PLACEHOLDER</span>
+                    <i data-feather="wifi"></i>
+                    <span>Manage RSP</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-right pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
+                    <li class="{{ ($route == 'rsp.view')?'active':'' }}"><a href="{{ route('rsp.view') }}"><i class="ti-more"></i>View RSP</a></li>
                     <li><a href="components_alerts.html"><i class="ti-more"></i>Alerts</a></li>
-                    <li><a href="components_badges.html"><i class="ti-more"></i>Badge</a></li>
-                    <li><a href="components_buttons.html"><i class="ti-more"></i>Buttons</a></li>
-                    <li><a href="components_sliders.html"><i class="ti-more"></i>Sliders</a></li>
-                    <li><a href="components_dropdown.html"><i class="ti-more"></i>Dropdown</a></li>
-                    <li><a href="components_modals.html"><i class="ti-more"></i>Modal</a></li>
-                    <li><a href="components_nestable.html"><i class="ti-more"></i>Nestable</a></li>
-                    <li><a href="components_progress_bars.html"><i class="ti-more"></i>Progress Bars</a></li>
                 </ul>
             </li>
+
         </ul>
     </section>
 

@@ -33,7 +33,7 @@
                     <div class="box">
                         <div class="box-header with-border">
                             <h3 class="box-title">RSP List</h3>
-                            <a href="" style="float: right;"
+                            <a href="{{ route('rsp.add') }}" style="float: right;"
                                 class="btn btn-rounded btn-success mb-5"> Add RSP</a>
 
                         </div>

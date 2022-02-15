@@ -59,6 +59,8 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
 
             // Start of Retail Service Provider Management Routes
             Route::get('rsp/view', [RetailServiceProviderController::class, 'RetailServiceProviderView'])->name('rsp.view');
+            Route::get('rsp/add', [RetailServiceProviderController::class, 'RetailServiceProviderAdd'])->name('rsp.add');
+            Route::post('rsp/store', [RetailServiceProviderController::class, 'RetailServiceProviderStore'])->name('rsp.store');
             // End of Retail Service Provider Management Routes
 
         });

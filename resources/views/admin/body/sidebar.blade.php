@@ -75,7 +75,7 @@ $route = Route::current()->getName();
                 </a>
                 <ul class="treeview-menu">
                     <li class="{{ ($route == 'rsp.view')?'active':'' }}"><a href="{{ route('rsp.view') }}"><i class="ti-more"></i>View RSP</a></li>
-                    <li><a href="components_alerts.html"><i class="ti-more"></i>Alerts</a></li>
+                    <li class="{{ ($route == 'rsp.add')?'active':'' }}"><a href="{{ route('rsp.add') }}"><i class="ti-more"></i>Add RSP</a></li>
                 </ul>
             </li>
 

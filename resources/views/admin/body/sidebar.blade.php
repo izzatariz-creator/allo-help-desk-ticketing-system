@@ -89,7 +89,7 @@ $route = Route::current()->getName();
                 </a>
                 <ul class="treeview-menu">
                     <li class="{{ ($route == 'modem.view')?'active':'' }}"><a href="{{ route('modem.view') }}"><i class="ti-more"></i>View Modem</a></li>
-                    <li class=""><a href="{{ route('rsp.add') }}"><i class="ti-more"></i>Add Modem</a></li>
+                    <li class="{{ ($route == 'modem.add')?'active':'' }}"><a href="{{ route('modem.add') }}"><i class="ti-more"></i>Add Modem</a></li>
                 </ul>
             </li>
 

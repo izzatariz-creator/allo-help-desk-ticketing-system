@@ -57,7 +57,7 @@
                                             <td> {{ $modem->brand }}</td>
                                             <td> {{ $modem->model }}</td>
                                             <td>
-                                                <a href=""
+                                                <a href="{{ route('modem.edit',$modem->id) }}"
                                                     class="btn btn-info">Edit</a>
                                                 <a href=""
                                                     class="btn btn-danger" id="delete">Delete</a>

@@ -40,7 +40,7 @@ class RetailServiceProviderController extends Controller
     public function RetailServiceProviderEdit($id)
     {
         $editData = RetailServiceProvider::find($id);
-        return view('backend.setup.rsp.edit_class', compact('editData'));
+        return view('backend.setup.rsp.edit_rsp', compact('editData'));
     }
 
     public function RetailServiceProviderStoreUpdate(Request $request, $id)

@@ -22,7 +22,6 @@ class ModemController extends Controller
     public function ModemStore(Request $request)
     {
         $validatedData = $request->validate([
-            'brand' => 'required|unique:modems,brand',
             'model' => 'required|unique:modems,model',
         ]);
 
@@ -38,4 +37,32 @@ class ModemController extends Controller
 
         return redirect()->route('modem.view')->with($notification);
     }
+
+    public function ModemEdit($id)
+    {
+        $editData = Modem::find($id);
+        return view('backend.setup.modem.edit_modem', compact('editData'));
+    }
+
+    public function ModemStoreUpdate(Request $request, $id)
+    {
+        $data = Modem::find($id);
+
+        // $validatedData = $request->validate([
+        //     'model' => 'required|unique:modems,model',
+        // ]);
+
+        $data->brand = $request->brand;
+        $data->model = $request->model;
+        $data->save();
+
+        $notification = array(
+            'message' => 'Modem Updated Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('modem.view')->with($notification);
+    }
+
+    
 }

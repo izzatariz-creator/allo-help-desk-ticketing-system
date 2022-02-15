@@ -61,4 +61,17 @@ class RetailServiceProviderController extends Controller
 
         return redirect()->route('rsp.view')->with($notification);
     }
+
+    public function RetailServiceProviderDelete($id)
+    {
+        $user = RetailServiceProvider::find($id);
+        $user->delete();
+
+        $notification = array(
+            'message' => 'RSP Deleted Successfully',
+            'alert-type' => 'info'
+        );
+
+        return redirect()->route('rsp.view')->with($notification);
+    }
 }

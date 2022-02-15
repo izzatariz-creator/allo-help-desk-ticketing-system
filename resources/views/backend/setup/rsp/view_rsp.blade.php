@@ -57,7 +57,7 @@
                                             <td>
                                                 <a href="{{ route('rsp.edit',$rsp->id) }}"
                                                     class="btn btn-info">Edit</a>
-                                                <a href=""
+                                                <a href="{{ route('rsp.delete',$rsp->id) }}"
                                                     class="btn btn-danger" id="delete">Delete</a>
                                             </td>
 

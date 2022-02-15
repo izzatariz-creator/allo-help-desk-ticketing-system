@@ -63,6 +63,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
             Route::post('rsp/store', [RetailServiceProviderController::class, 'RetailServiceProviderStore'])->name('rsp.store');
             Route::get('rsp/edit/{id}', [RetailServiceProviderController::class, 'RetailServiceProviderEdit'])->name('rsp.edit');
             Route::post('rsp/edit/store/{id}', [RetailServiceProviderController::class, 'RetailServiceProviderStoreUpdate'])->name('rsp.edit.store');
+            Route::get('rsp/delete/{id}', [RetailServiceProviderController::class, 'RetailServiceProviderDelete'])->name('rsp.delete');
             // End of Retail Service Provider Management Routes
 
         });

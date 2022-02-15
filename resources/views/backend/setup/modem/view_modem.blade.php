@@ -59,7 +59,7 @@
                                             <td>
                                                 <a href="{{ route('modem.edit',$modem->id) }}"
                                                     class="btn btn-info">Edit</a>
-                                                <a href=""
+                                                <a href="{{ route('modem.delete',$modem->id) }}"
                                                     class="btn btn-danger" id="delete">Delete</a>
                                             </td>
 

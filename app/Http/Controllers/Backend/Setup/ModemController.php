@@ -64,5 +64,16 @@ class ModemController extends Controller
         return redirect()->route('modem.view')->with($notification);
     }
 
-    
+    public function ModemDelete($id)
+    {
+        $user = Modem::find($id);
+        $user->delete();
+
+        $notification = array(
+            'message' => 'Modem Deleted Successfully',
+            'alert-type' => 'info'
+        );
+
+        return redirect()->route('modem.view')->with($notification);
+    }
 }

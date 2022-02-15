@@ -73,6 +73,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
             Route::post('store', [ModemController::class, 'ModemStore'])->name('modem.store');
             Route::get('edit/{id}', [ModemController::class, 'ModemEdit'])->name('modem.edit');
             Route::post('update/store/{id}', [ModemController::class, 'ModemStoreUpdate'])->name('modem.update.store');
+            Route::get('delete/{id}', [ModemController::class, 'ModemDelete'])->name('modem.delete');
         });
         // End of Group for Retail Service Provider Management Routes
 

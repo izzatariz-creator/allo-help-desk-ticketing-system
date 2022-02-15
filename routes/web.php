@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Backend\Setup\ModemController;
+use App\Http\Controllers\Backend\Setup\ProblemCategoryController;
 use App\Http\Controllers\Backend\Setup\RetailServiceProviderController;
 use App\Http\Controllers\Backend\Setup\RouterController;
 use App\Http\Controllers\Backend\User\ProfileController;
@@ -88,6 +89,17 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
             Route::get('delete/{id}', [RouterController::class, 'RouterDelete'])->name('router.delete');
         });
         // End of Group for Router Management Routes
+
+        // Start of Group for Problem Category Management Routes
+        Route::prefix('program/category')->group(function () {
+            Route::get('view', [ProblemCategoryController::class, 'ProblemCategoryView'])->name('problem.category.view');
+            Route::get('add', [ProblemCategoryController::class, 'ProblemCategoryAdd'])->name('problem.category.add');
+            Route::post('store', [ProblemCategoryController::class, 'ProblemCategoryStore'])->name('problem.category.store');
+            Route::get('edit/{id}', [ProblemCategoryController::class, 'ProblemCategoryEdit'])->name('problem.category.edit');
+            Route::post('update/store/{id}', [ProblemCategoryController::class, 'ProblemCategoryStoreUpdate'])->name('problem.category.update.store');
+            Route::get('delete/{id}', [ProblemCategoryController::class, 'ProblemCategoryDelete'])->name('problem.category.delete');
+        });
+        // End of Group for Problem Category Management Routes
 
     }); //End Of Auth Middleware Group
 

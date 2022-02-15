@@ -107,6 +107,23 @@ $route = Route::current()->getName();
                 </ul>
             </li>
 
+            <li class="treeview {{ ($prefix == '/program/category')?'active':'' }}">
+                <a href="#">
+                    <i data-feather="hard-drive"></i>
+                    <span>Manage Prob. Category</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{ ($route == 'problem.category.view')?'active':'' }}"><a href="{{ route('problem.category.view') }}"><i class="ti-more"></i>View Problem Category</a></li>
+                    <li class="{{ ($route == 'problem.category.add')?'active':'' }}"><a href="{{ route('problem.category.add') }}"><i class="ti-more"></i>Add Problem Category</a></li>
+                </ul>
+            </li>
+
+            <hr>
+            <li class="header nav-small-cap">Ticket Management</li>
+
         </ul>
     </section>
 

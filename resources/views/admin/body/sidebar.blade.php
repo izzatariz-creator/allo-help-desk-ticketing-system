@@ -65,7 +65,7 @@ $route = Route::current()->getName();
 
             <li class="header nav-small-cap">Setup Management</li>
 
-            <li class="treeview {{ ($prefix == '/setup')?'active':'' }}">
+            <li class="treeview {{ ($prefix == '/rsp')?'active':'' }}">
                 <a href="#">
                     <i data-feather="wifi"></i>
                     <span>Manage RSP</span>
@@ -76,6 +76,20 @@ $route = Route::current()->getName();
                 <ul class="treeview-menu">
                     <li class="{{ ($route == 'rsp.view')?'active':'' }}"><a href="{{ route('rsp.view') }}"><i class="ti-more"></i>View RSP</a></li>
                     <li class="{{ ($route == 'rsp.add')?'active':'' }}"><a href="{{ route('rsp.add') }}"><i class="ti-more"></i>Add RSP</a></li>
+                </ul>
+            </li>
+
+            <li class="treeview {{ ($prefix == '/modem')?'active':'' }}">
+                <a href="#">
+                    <i data-feather="hard-drive"></i>
+                    <span>Manage Modem</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{ ($route == 'modem.view')?'active':'' }}"><a href="{{ route('modem.view') }}"><i class="ti-more"></i>View Modem</a></li>
+                    <li class=""><a href="{{ route('rsp.add') }}"><i class="ti-more"></i>Add Modem</a></li>
                 </ul>
             </li>
 

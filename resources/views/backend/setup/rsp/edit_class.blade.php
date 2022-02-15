@@ -36,7 +36,7 @@
                     <div class="row">
                         <div class="col">
 
-                            <form method="post" action="{{ route('rsp.edit.store',$editData->id) }}">
+                            <form method="post" action="{{ route('rsp.update.store',$editData->id) }}">
                                 @csrf
                                 <div class="row">
                                     <div class="col-12">

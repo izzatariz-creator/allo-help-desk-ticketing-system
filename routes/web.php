@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Backend\Setup\ModemController;
 use App\Http\Controllers\Backend\Setup\RetailServiceProviderController;
 use App\Http\Controllers\Backend\User\ProfileController;
 use App\Http\Controllers\Backend\User\UserController;
@@ -54,20 +55,22 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         });
         // End of Group for Profile Management Routes
 
-        // Start of Group for Setup Management Routes
-        Route::prefix('setup')->group(function () {
-
-            // Start of Retail Service Provider Management Routes
-            Route::get('rsp/view', [RetailServiceProviderController::class, 'RetailServiceProviderView'])->name('rsp.view');
-            Route::get('rsp/add', [RetailServiceProviderController::class, 'RetailServiceProviderAdd'])->name('rsp.add');
-            Route::post('rsp/store', [RetailServiceProviderController::class, 'RetailServiceProviderStore'])->name('rsp.store');
-            Route::get('rsp/edit/{id}', [RetailServiceProviderController::class, 'RetailServiceProviderEdit'])->name('rsp.edit');
-            Route::post('rsp/edit/store/{id}', [RetailServiceProviderController::class, 'RetailServiceProviderStoreUpdate'])->name('rsp.edit.store');
-            Route::get('rsp/delete/{id}', [RetailServiceProviderController::class, 'RetailServiceProviderDelete'])->name('rsp.delete');
-            // End of Retail Service Provider Management Routes
-
+        // Start of Group for Retail Service Provider Management Routes
+        Route::prefix('rsp')->group(function () {
+            Route::get('view', [RetailServiceProviderController::class, 'RetailServiceProviderView'])->name('rsp.view');
+            Route::get('add', [RetailServiceProviderController::class, 'RetailServiceProviderAdd'])->name('rsp.add');
+            Route::post('store', [RetailServiceProviderController::class, 'RetailServiceProviderStore'])->name('rsp.store');
+            Route::get('edit/{id}', [RetailServiceProviderController::class, 'RetailServiceProviderEdit'])->name('rsp.edit');
+            Route::post('update/store/{id}', [RetailServiceProviderController::class, 'RetailServiceProviderStoreUpdate'])->name('rsp.update.store');
+            Route::get('delete/{id}', [RetailServiceProviderController::class, 'RetailServiceProviderDelete'])->name('rsp.delete');
         });
-        // End of Group for Setup Management Routes
+        // End of Group for Retail Service Provider Management Routes
+
+        // Start of Group for Retail Service Provider Management Routes
+        Route::prefix('modem')->group(function () {
+            Route::get('view', [ModemController::class, 'ModemView'])->name('modem.view');
+        });
+        // End of Group for Retail Service Provider Management Routes
 
     }); //End Of Auth Middleware Group
 

@@ -48,7 +48,7 @@
             <div class="content-body">
                 <div class="auth-wrapper auth-cover">
                     <div class="auth-inner row m-0">
-                        <!-- Brand logo--><a class="brand-logo" href="index.html">
+                        <!-- Brand logo--><a class="brand-logo" href="{{ route('register') }}">
                             <svg viewBox="0 0 139 95" version="1.1" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" height="28">
                                 <defs>
@@ -98,6 +98,15 @@
                         <!-- Register-->
                         <div class="d-flex col-lg-4 align-items-center auth-bg px-2 p-lg-5">
                             <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
+
+                                <x-jet-validation-errors class="mb-4" />
+
+                                @if (session('status'))
+                                <div class="mb-4 font-medium text-sm text-red">
+                                    {{ session('status') }}
+                                </div>
+                                @endif
+
                                 <h2 class="card-title fw-bold mb-1">Adventure starts here 🚀</h2>
                                 <p class="card-text mb-2">Fill In Required Fields</p>
 
@@ -106,23 +115,23 @@
 
                                     <div class="mb-1">
                                         <label class="form-label" for="register-username">Full Name</label>
-                                        <input class="form-control" id="name" type="text"
-                                        name="name" placeholder="johndoe"
-                                            aria-describedby="register-username" required autofocus="name" tabindex="1" />
+                                        <input class="form-control" id="name" type="text" name="name"
+                                            placeholder="johndoe" aria-describedby="register-username" required
+                                            autofocus="name" tabindex="1" />
                                     </div>
 
                                     <div class="mb-1">
                                         <label class="form-label" for="register-email">Email</label>
-                                        <input class="form-control" id="email" type="email"
-                                        name="email" placeholder="john@example.com"
-                                            aria-describedby="register-email" tabindex="2" required />
+                                        <input class="form-control" id="email" type="email" name="email"
+                                            placeholder="john@example.com" aria-describedby="register-email"
+                                            tabindex="2" required />
                                     </div>
 
                                     <div class="mb-1">
                                         <label class="form-label" for="register-password">Password</label>
                                         <div class="input-group input-group-merge form-password-toggle">
-                                            <input class="form-control form-control-merge" id="password"
-                                                type="password" name="password" placeholder="············" required
+                                            <input class="form-control form-control-merge" id="password" type="password"
+                                                name="password" placeholder="············" required
                                                 aria-describedby="register-password" tabindex="3" /><span
                                                 class="input-group-text cursor-pointer"><i
                                                     data-feather="eye"></i></span>
@@ -133,8 +142,8 @@
                                         <label class="form-label" for="register-password">Password</label>
                                         <div class="input-group input-group-merge form-password-toggle">
                                             <input class="form-control form-control-merge" id="password_confirmation"
-                                            type="password" name="password_confirmation" placeholder="············" required
-                                                aria-describedby="register-password" tabindex="3" /><span
+                                                type="password" name="password_confirmation" placeholder="············"
+                                                required aria-describedby="register-password" tabindex="3" /><span
                                                 class="input-group-text cursor-pointer"><i
                                                     data-feather="eye"></i></span>
                                         </div>
@@ -143,13 +152,13 @@
                                     <div class="mb-1">
                                         <div class="form-check">
                                             <input class="form-check-input" id="register-privacy-policy" type="checkbox"
-                                                tabindex="4"/>
+                                                tabindex="4" />
                                             <label class="form-check-label" for="register-privacy-policy">I agree to<a
                                                     href="#">&nbsp;privacy policy & terms</a></label>
                                         </div>
                                     </div>
-                                    
-                                    <button type="submit "class="btn btn-primary w-100" tabindex="5">Sign up</button>
+
+                                    <button type="submit " class="btn btn-primary w-100" tabindex="5">Sign up</button>
 
                                 </form>
 
@@ -157,7 +166,7 @@
                                     <div class="divider-text">or</div>
                                 </div>
                                 <p class="text-center mt-2"><span>Already have an account?</span><a
-                                    href="{{ route('login') }}"><span>&nbsp;Sign in instead</span></a></p>
+                                        href="{{ route('login') }}"><span>&nbsp;Sign in instead</span></a></p>
                             </div>
                         </div>
                         <!-- /Register-->

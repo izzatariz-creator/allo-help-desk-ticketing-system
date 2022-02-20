@@ -47,7 +47,7 @@
             <div class="content-body">
                 <div class="auth-wrapper auth-cover">
                     <div class="auth-inner row m-0">
-                        <!-- Brand logo--><a class="brand-logo" href="index.html">
+                        <!-- Brand logo--><a class="brand-logo" href="{{ route('login') }}">
                             <svg viewBox="0 0 139 95" version="1.1" xmlns="http://www.w3.org/2000/svg"
                                 xmlns:xlink="http://www.w3.org/1999/xlink" height="28">
                                 <defs>
@@ -97,6 +97,15 @@
                         <!-- Login-->
                         <div class="d-flex col-lg-4 align-items-center auth-bg px-2 p-lg-5">
                             <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
+
+                                <x-jet-validation-errors class="mb-4" />
+
+                                @if (session('status'))
+                                <div class="mb-4 font-medium text-sm text-red-600">
+                                    {{ session('status') }}
+                                </div>
+                                @endif
+
                                 <h2 class="card-title fw-bold mb-1">Welcome to Allo Help Desk Ticketing System</h2>
                                 <p class="card-text mb-2">Please sign-in to your account and start the adventure</p>
                                 <form class="auth-login-form mt-2" action="{{ route('login') }}" method="POST">

@@ -105,7 +105,7 @@
                                     @csrf
 
                                     <div class="mb-1">
-                                        <label class="form-label" for="register-username">Username</label>
+                                        <label class="form-label" for="register-username">Full Name</label>
                                         <input class="form-control" id="name" type="text"
                                         name="name" placeholder="johndoe"
                                             aria-describedby="register-username" required autofocus="name" tabindex="1" />

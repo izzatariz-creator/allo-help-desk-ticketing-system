@@ -83,13 +83,23 @@
                 <div class="box-body box-profile">
                     <div class="row">
                         <div class="col-12">
-                            <a href="" style="float: right;" class="btn btn-rounded btn-success mb-5"> Edit Equipment</a>
+                            <a href="{{ route('equipment.edit')}}" style="float: right;" class="btn btn-rounded btn-success mb-5"> Edit Equipment</a>
                             <h4 class="description-header" style="padding-top: 10px;">Equipment Details</h4> 
                             <hr style="width:100%;text-align:left;margin-left:0"> 
                             <div>
-                                <p>PLACEHOLDER #1:<span class="text-gray pl-10">DATA #1</span> </p>
-                                <p>PLACEHOLDER #2:<span class="text-gray pl-10">DATA #2</span></p>
-                                <p>PLACEHOLDER #3:<span class="text-gray pl-10">DATA #3</span></p>
+                                <p>Retail Service Provider:<span class="text-gray pl-10">{{ isset($user['retail_service_provider']['name']) ? $user['retail_service_provider']['name'] : '' }}</span></p>
+                                <p>
+                                    Modem:
+                                    <span class="text-gray pl-10">
+                                        {{ isset($user['modem']['name']) ? $user['modem']['name'] : ''}}
+                                    </span>
+                                </p>
+                                <p>
+                                    Router:
+                                    <span class="text-gray pl-10">
+                                        {{ isset($user['router']['name']) ? $user['router']['name'] : ''}}
+                                    </span>
+                                </p>
                             </div>
                         </div>
                     </div>

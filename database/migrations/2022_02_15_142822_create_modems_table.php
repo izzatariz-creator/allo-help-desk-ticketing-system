@@ -15,8 +15,7 @@ return new class extends Migration
     {
         Schema::create('modems', function (Blueprint $table) {
             $table->id();
-            $table->string('brand')->unique()->nullable();
-            $table->string('model')->unique()->nullable();
+            $table->string('name')->unique()->nullable();
             $table->timestamps();
         });
     }

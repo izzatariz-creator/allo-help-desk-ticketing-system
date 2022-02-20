@@ -10,7 +10,6 @@ class Modem extends Model
     use HasFactory;
 
     protected $fillable = [
-        'brand',
-        'model',
+        'name',
     ];
 }

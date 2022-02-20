@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Backend\User;
 
 use App\Http\Controllers\Controller;
+use App\Models\Modem;
+use App\Models\RetailServiceProvider;
+use App\Models\Router;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -13,9 +16,9 @@ class ProfileController extends Controller
     public function ProfileView()
     {
         $id = Auth::user()->id; //retrieve authenticated user's id
-        $user = User::find($id);
+        $data['user'] = User::find($id);
 
-        return view('backend.profile.view_profile', compact('user'));
+        return view('backend.profile.view_profile', $data);
     }
 
     public function ProfileEdit()
@@ -81,5 +84,33 @@ class ProfileController extends Controller
         } else {
             return redirect()->back();
         }
+    }
+
+    public function EquipmentEdit()
+    {
+        $id = Auth::user()->id;
+        $data['editData'] = User::find($id);
+        // dd($data['editData']->toArray());
+        $data['rspData'] = RetailServiceProvider::all();
+        $data['modemData'] = Modem::all();
+        $data['routerData'] = Router::all();
+        return view('backend.profile.edit_equipment', $data);
+    }
+
+    public function EquipmentStoreUpdate(Request $request)
+    {
+        $data = User::find(Auth::user()->id);
+
+        $data->rsp_id = $request->rsp_id;
+        $data->modem_id = $request->modem_id;
+        $data->router_id = $request->router_id;
+        $data->save();
+
+        $notification = array(
+            'message' => 'Equipment Updated Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('profile.view')->with($notification);
     }
 }

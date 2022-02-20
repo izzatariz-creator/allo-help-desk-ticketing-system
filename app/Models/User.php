@@ -32,6 +32,9 @@ class User extends Authenticatable
         'address',
         'image',
         'temppass',
+        'rsp_id',
+        'modem_id',
+        'router_id',
     ];
 
     /**
@@ -63,4 +66,16 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function retail_service_provider(){
+        return $this->belongsTo(RetailServiceProvider::class, 'rsp_id','id');
+    }
+
+    public function modem(){
+        return $this->belongsTo(Modem::class, 'modem_id','id');
+    }
+
+    public function router(){
+        return $this->belongsTo(Router::class, 'router_id','id');
+    }
 }

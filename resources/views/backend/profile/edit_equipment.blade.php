@@ -8,13 +8,13 @@
         <div class="content-header">
             <div class="d-flex align-items-center">
                 <div class="mr-auto">
-                    <h3 class="page-title">Update User</h3>
+                    <h3 class="page-title">Edit Equipment</h3>
                     <div class="d-inline-block align-items-center">
                         <nav>
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#"><i class="mdi mdi-account-outline"></i></a></li>
-                                <li class="breadcrumb-item" aria-current="page">Manage User</li>
-                                <li class="breadcrumb-item active" aria-current="page">Update User</li>
+                                <li class="breadcrumb-item" aria-current="page">Manage Profile</li>
+                                <li class="breadcrumb-item active" aria-current="page">Edit Equipment</li>
                             </ol>
                         </nav>
                     </div>
@@ -28,7 +28,7 @@
             <!-- Basic Forms -->
             <div class="box">
                 <div class="box-header with-border">
-                    <h4 class="box-title">Update User</h4>
+                    <h4 class="box-title">Edit Equipment</h4>
 
                 </div>
                 <!-- /.box-header -->
@@ -36,7 +36,7 @@
                     <div class="row">
                         <div class="col">
 
-                            <form method="post" action="{{ route('user.update',$editData->id) }}">
+                            <form method="post" action="{{ route('equipment.update')}}">
                                 @csrf
                                 <div class="row">
                                     <div class="col-12">
@@ -46,30 +46,31 @@
                                             <div class="col-md-6">
 
                                                 <div class="form-group">
-                                                    <h5>User Role <span class="text-danger">*</span></h5>
+                                                    <h5>Retail Service Provider <span class="text-danger">*</span></h5>
                                                     <div class="controls">
-                                                        <select name="role" id="role" required="" class="form-control">
-                                                            <option value="" selected="" disabled="">Select Role
-                                                            </option>
-                                                            <option value="Admin" {{ ($editData->role == "Admin" ?
-                                                                "selected": "") }} >Admin</option>
-                                                            <option value="Technician" {{ ($editData->role == "Technician" ?
-                                                                "selected": "") }} >Technician</option>    
-                                                            <option value="User" {{ ($editData->role == "User" ?
-                                                                "selected": "") }} >User</option>
-                                                        </select>
+                                                        <select name="rsp_id" required="" class="form-control">
+															<option value="" selected="" disabled="">Select Retail Service Provider</option>
+															@foreach($rspData as $rsp)
+															<option value="{{ $rsp->id }}" {{ ($editData->rsp_id ==
+																$rsp->id) ? "selected" :"" }} >{{ $rsp->name }}</option>
+															@endforeach
+														</select>
                                                     </div>
                                                 </div>
                                             </div> <!-- End Col Md-6 -->
 
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <h5>Full Name <span class="text-danger">*</span></h5>
+                                                    <h5>Modem <span class="text-danger">*</span></h5>
                                                     <div class="controls">
-                                                        <input type="text" name="name" class="form-control"
-                                                            value="{{ $editData->name }}" required="">
+                                                        <select name="modem_id" required="" class="form-control">
+															<option value="" selected="" disabled="">Select Modem</option>
+															@foreach($modemData as $modem)
+															<option value="{{ $modem->id }}" {{ ($editData->modem_id ==
+																$modem->id) ? "selected" :"" }} >{{ $modem->name }}</option>
+															@endforeach
+														</select>
                                                     </div>
-
                                                 </div>
 
                                             </div><!-- End Col Md-6 -->
@@ -81,10 +82,15 @@
                                             <div class="col-md-6">
 
                                                 <div class="form-group">
-                                                    <h5>User Email <span class="text-danger">*</span></h5>
+                                                    <h5>Router <span class="text-danger">*</span></h5>
                                                     <div class="controls">
-                                                        <input type="email" name="email" class="form-control"
-                                                            value="{{ $editData->email }}" required="">
+                                                        <select name="router_id" required="" class="form-control">
+															<option value="" selected="" disabled="">Select Router</option>
+															@foreach($routerData as $router)
+															<option value="{{ $router->id }}" {{ ($editData->router_id ==
+																$router->id) ? "selected" :"" }} >{{ $router->name }}</option>
+															@endforeach
+														</select>
                                                     </div>
 
                                                 </div>

@@ -58,6 +58,7 @@ $route = Route::current()->getName();
                     <li class="{{ ($route == 'profile.view')?'active':'' }}"><a href="{{ route('profile.view') }}"><i class="ti-more"></i>My Profile</a></li>
                     <li class="{{ ($route == 'profile.edit')?'active':'' }}"><a href="{{ route('profile.edit') }}"><i class="ti-more"></i>Edit Profile</a></li>
                     <li class="{{ ($route == 'profile.password')?'active':'' }}"><a href="{{ route('profile.password') }}"><i class="ti-more"></i>Change Password</a></li>
+                    <li class="{{ ($route == 'equipment.edit')?'active':'' }}"><a href="{{ route('equipment.edit') }}"><i class="ti-more"></i>Edit Equipment</a></li>
                 </ul>
             </li>
 

@@ -98,10 +98,10 @@
                         <div class="d-flex col-lg-4 align-items-center auth-bg px-2 p-lg-5">
                             <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
 
-                                <x-jet-validation-errors class="mb-4" />
+                                <x-jet-validation-errors class="mb-4" style="color:red;" />
 
                                 @if (session('status'))
-                                <div class="mb-4 font-medium text-sm text-red-600">
+                                <div class="mb-4 font-medium text-sm text-red-600" style="color:red;">
                                     {{ session('status') }}
                                 </div>
                                 @endif

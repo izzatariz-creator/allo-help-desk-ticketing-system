@@ -99,10 +99,10 @@
                         <div class="d-flex col-lg-4 align-items-center auth-bg px-2 p-lg-5">
                             <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
 
-                                <x-jet-validation-errors class="mb-4" />
+                                <x-jet-validation-errors class="mb-4" style="color:red;" />
 
                                 @if (session('status'))
-                                <div class="mb-4 font-medium text-sm text-red">
+                                <div class="mb-4 font-medium text-sm text-red-600" style="color:red;">
                                     {{ session('status') }}
                                 </div>
                                 @endif
@@ -114,21 +114,21 @@
                                     @csrf
 
                                     <div class="mb-1">
-                                        <label class="form-label" for="register-username">Full Name</label>
+                                        <label class="form-label" for="register-username">Full Name <span class="text-danger">*</span></label>
                                         <input class="form-control" id="name" type="text" name="name"
                                             placeholder="johndoe" aria-describedby="register-username" required
                                             autofocus="name" tabindex="1" />
                                     </div>
 
                                     <div class="mb-1">
-                                        <label class="form-label" for="register-email">Email</label>
+                                        <label class="form-label" for="register-email">Email <span class="text-danger">*</span></label>
                                         <input class="form-control" id="email" type="email" name="email"
                                             placeholder="john@example.com" aria-describedby="register-email"
                                             tabindex="2" required />
                                     </div>
 
                                     <div class="mb-1">
-                                        <label class="form-label" for="register-password">Password</label>
+                                        <label class="form-label" for="register-password">Password <span class="text-danger">*</span></label>
                                         <div class="input-group input-group-merge form-password-toggle">
                                             <input class="form-control form-control-merge" id="password" type="password"
                                                 name="password" placeholder="············" required
@@ -139,7 +139,7 @@
                                     </div>
 
                                     <div class="mb-1">
-                                        <label class="form-label" for="register-password">Password</label>
+                                        <label class="form-label" for="register-password">Confirm Password <span class="text-danger">*</span></label>
                                         <div class="input-group input-group-merge form-password-toggle">
                                             <input class="form-control form-control-merge" id="password_confirmation"
                                                 type="password" name="password_confirmation" placeholder="············"

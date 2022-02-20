@@ -31,7 +31,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         return view('admin.index');
     })->name('dashboard');
     
-    Route::get('/logout', [AdminController::class, 'Logout'])->name('admin.logout');
+    Route::get('/logout', [AdminController::class, 'destroy'])->name('admin.logout');
 
     // Start Of Auth Middleware Group
     Route::group(['middleware' => 'auth'], function () {

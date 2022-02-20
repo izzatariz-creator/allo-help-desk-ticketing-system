@@ -79,11 +79,12 @@ class ProfileController extends Controller
             $user->password = Hash::make($request->password);
 
             $user->save();
-            Auth::logout();
-            return redirect()->route('login');
-        } else {
-            return redirect()->back();
-        }
+            $request->session()->invalidate();
+
+            $request->session()->regenerateToken();
+
+            return redirect()->route('admin.logout');
+        } 
     }
 
     public function EquipmentEdit()

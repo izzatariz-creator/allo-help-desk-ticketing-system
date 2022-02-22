@@ -22,12 +22,11 @@ class RouterController extends Controller
     public function RouterStore(Request $request)
     {
         $validatedData = $request->validate([
-            'model' => 'required|unique:modems,model',
+            'name' => 'required|unique:routers,name',
         ]);
 
         $data = new Router();
-        $data->brand = $request->brand;
-        $data->model = $request->model;
+        $data->name = $request->name;
         $data->save();
 
         $notification = array(
@@ -46,10 +45,14 @@ class RouterController extends Controller
 
     public function RouterStoreUpdate(Request $request, $id)
     {
+
+        $validatedData = $request->validate([
+            'name' => 'required|unique:routers,name',
+        ]);
+
         $data = Router::find($id);
 
-        $data->brand = $request->brand;
-        $data->model = $request->model;
+        $data->name = $request->name;
         $data->save();
 
         $notification = array(

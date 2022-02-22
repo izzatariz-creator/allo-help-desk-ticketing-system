@@ -52,7 +52,13 @@
                                         @foreach ($allData as $key => $user)
                                             <tr>
                                                 <td>{{ $key+1 }}</td>
-                                                <td>{{ $user->role }}</td>
+                                                <td>
+                                                    @if(!empty($user->getRoleNames()))
+                                                    @foreach($user->getRoleNames() as $v)
+                                                    <label class="badge badge-success">{{ $v }}</label>
+                                                    @endforeach
+                                                    @endif
+                                                </td>
                                                 <td>{{ $user->name }}</td>
                                                 <td>{{ $user->email }}</td>
                                                 <td>{{ $user->temppass }}</td>

@@ -48,16 +48,16 @@
                                                 <div class="form-group">
                                                     <h5>User Role <span class="text-danger">*</span></h5>
                                                     <div class="controls">
-                                                        <select name="role" id="role" required="" class="form-control">
-                                                            <option value="" selected="" disabled="">Select Role
-                                                            </option>
-                                                            <option value="Admin" {{ ($editData->role == "Admin" ?
-                                                                "selected": "") }} >Admin</option>
-                                                            <option value="Technician" {{ ($editData->role == "Technician" ?
-                                                                "selected": "") }} >Technician</option>    
-                                                            <option value="User" {{ ($editData->role == "User" ?
-                                                                "selected": "") }} >User</option>
-                                                        </select>
+                                                        <select name="roles" required="" class="form-control">
+															<option value="" selected="" disabled="">Select Role</option>
+															@foreach($roles as $role)
+															<option value="{{ $role->id }}" 
+                                                                
+                                                            
+                                                            {{ isset($editData->roles->first()->id) ? (($editData->roles->first()->id == $role->id) ? "selected" :"") : "" }} >{{ $role->name }}</option>
+
+															@endforeach
+														</select>
                                                     </div>
                                                 </div>
                                             </div> <!-- End Col Md-6 -->

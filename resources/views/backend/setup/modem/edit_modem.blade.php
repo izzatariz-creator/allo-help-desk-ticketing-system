@@ -42,22 +42,11 @@
                                     <div class="col-12">
 
                                         <div class="form-group">
-                                            <h5>Modem Brand <span class="text-danger">*</span></h5>
-                                            <div class="controls">
-                                                <input type="text" name="brand" class="form-control"
-                                                    value="{{ $editData->brand }}">
-                                                @error('brand')
-                                                <span class="text-danger">{{ $message }}</span>
-                                                @enderror
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
                                             <h5>Modem Model <span class="text-danger">*</span></h5>
                                             <div class="controls">
-                                                <input type="text" name="model" class="form-control"
-                                                    value="{{ $editData->model }}">
-                                                @error('model')
+                                                <input type="text" name="name" class="form-control"
+                                                    value="{{ $editData->name }}">
+                                                @error('name')
                                                 <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                             </div>

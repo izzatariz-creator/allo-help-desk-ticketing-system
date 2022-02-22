@@ -22,12 +22,11 @@ class ModemController extends Controller
     public function ModemStore(Request $request)
     {
         $validatedData = $request->validate([
-            'model' => 'required|unique:modems,model',
+            'name' => 'required|unique:modems,name',
         ]);
 
         $data = new Modem();
-        $data->brand = $request->brand;
-        $data->model = $request->model;
+        $data->name = $request->name;
         $data->save();
 
         $notification = array(
@@ -48,12 +47,11 @@ class ModemController extends Controller
     {
         $data = Modem::find($id);
 
-        // $validatedData = $request->validate([
-        //     'model' => 'required|unique:modems,model',
-        // ]);
+        $validatedData = $request->validate([
+            'name' => 'required|unique:modems,name',
+        ]);
 
-        $data->brand = $request->brand;
-        $data->model = $request->model;
+        $data->name = $request->name;
         $data->save();
 
         $notification = array(

@@ -44,7 +44,6 @@
                                     <thead>
                                         <tr>
                                             <th width="5%">No.</th>
-                                            <th>Brand</th>
                                             <th>Model</th>
                                             <th width="25%">Action</th>
 
@@ -54,8 +53,7 @@
                                         @foreach($allData as $key => $modem )
                                         <tr>
                                             <td>{{ $key+1 }}</td>
-                                            <td> {{ $modem->brand }}</td>
-                                            <td> {{ $modem->model }}</td>
+                                            <td> {{ $modem->name }}</td>
                                             <td>
                                                 <a href="{{ route('modem.edit',$modem->id) }}"
                                                     class="btn btn-info">Edit</a>

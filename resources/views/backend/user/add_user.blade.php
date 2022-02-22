@@ -48,12 +48,12 @@
                                                 <div class="form-group">
                                                     <h5>User Role <span class="text-danger">*</span></h5>
                                                     <div class="controls">
-                                                        <select name="role" id="role" required="" class="form-control">
+                                                        <select name="roles" id="roles" required="" class="form-control">
                                                             <option value="" selected="" disabled="">Select Role
                                                             </option>
-                                                            <option value="Admin">Admin</option>
-                                                            <option value="Technician">Technician</option>
-                                                            <option value="User">End User</option>
+                                                            <option value="admin">Admin</option>
+                                                            <option value="technician">Technician</option>
+                                                            <option value="end_user">End User</option>
                                                         </select>
                                                     </div>
                                                 </div>

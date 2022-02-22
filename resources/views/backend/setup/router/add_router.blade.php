@@ -44,20 +44,10 @@
                                     <div class="col-12">
 
                                         <div class="form-group">
-                                            <h5>Router Brand <span class="text-danger">*</span></h5>
-                                            <div class="controls">
-                                                <input type="text" name="brand" class="form-control">
-                                                @error('brand')
-                                                <span class="text-danger">{{ $message }}</span>
-                                                @enderror
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
                                             <h5>Router Model <span class="text-danger">*</span></h5>
                                             <div class="controls">
-                                                <input type="text" name="model" class="form-control">
-                                                @error('model')
+                                                <input type="text" name="name" class="form-control">
+                                                @error('name')
                                                 <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                             </div>

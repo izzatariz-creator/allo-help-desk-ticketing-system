@@ -93,7 +93,17 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         // End of Group for Router Management Routes
 
         // Start of Group for Problem Category Management Routes
-        Route::prefix('program/category')->group(function () {
+        // Route::prefix('program/category')->group(function () {
+        //     Route::get('view', [ProblemCategoryController::class, 'ProblemCategoryView'])->name('problem.category.view');
+        //     Route::get('add', [ProblemCategoryController::class, 'ProblemCategoryAdd'])->name('problem.category.add');
+        //     Route::post('store', [ProblemCategoryController::class, 'ProblemCategoryStore'])->name('problem.category.store');
+        //     Route::get('edit/{id}', [ProblemCategoryController::class, 'ProblemCategoryEdit'])->name('problem.category.edit');
+        //     Route::post('update/store/{id}', [ProblemCategoryController::class, 'ProblemCategoryStoreUpdate'])->name('problem.category.update.store');
+        //     Route::get('delete/{id}', [ProblemCategoryController::class, 'ProblemCategoryDelete'])->name('problem.category.delete');
+        // });
+        // End of Group for Problem Category Management Routes
+
+        Route::group(['prefix' => 'program/category','middleware' => ['role:end_user']], function () {
             Route::get('view', [ProblemCategoryController::class, 'ProblemCategoryView'])->name('problem.category.view');
             Route::get('add', [ProblemCategoryController::class, 'ProblemCategoryAdd'])->name('problem.category.add');
             Route::post('store', [ProblemCategoryController::class, 'ProblemCategoryStore'])->name('problem.category.store');
@@ -101,7 +111,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
             Route::post('update/store/{id}', [ProblemCategoryController::class, 'ProblemCategoryStoreUpdate'])->name('problem.category.update.store');
             Route::get('delete/{id}', [ProblemCategoryController::class, 'ProblemCategoryDelete'])->name('problem.category.delete');
         });
-        // End of Group for Problem Category Management Routes
+
 
     }); //End Of Auth Middleware Group
 

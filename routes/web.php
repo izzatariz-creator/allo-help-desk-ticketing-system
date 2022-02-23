@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\Setup\ModemController;
 use App\Http\Controllers\Backend\Setup\ProblemCategoryController;
 use App\Http\Controllers\Backend\Setup\RetailServiceProviderController;
 use App\Http\Controllers\Backend\Setup\RouterController;
+use App\Http\Controllers\Backend\Ticket\TicketController;
 use App\Http\Controllers\Backend\User\ProfileController;
 use App\Http\Controllers\Backend\User\UserController;
 use Illuminate\Support\Facades\Route;
@@ -93,17 +94,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         // End of Group for Router Management Routes
 
         // Start of Group for Problem Category Management Routes
-        // Route::prefix('program/category')->group(function () {
-        //     Route::get('view', [ProblemCategoryController::class, 'ProblemCategoryView'])->name('problem.category.view');
-        //     Route::get('add', [ProblemCategoryController::class, 'ProblemCategoryAdd'])->name('problem.category.add');
-        //     Route::post('store', [ProblemCategoryController::class, 'ProblemCategoryStore'])->name('problem.category.store');
-        //     Route::get('edit/{id}', [ProblemCategoryController::class, 'ProblemCategoryEdit'])->name('problem.category.edit');
-        //     Route::post('update/store/{id}', [ProblemCategoryController::class, 'ProblemCategoryStoreUpdate'])->name('problem.category.update.store');
-        //     Route::get('delete/{id}', [ProblemCategoryController::class, 'ProblemCategoryDelete'])->name('problem.category.delete');
-        // });
-        // End of Group for Problem Category Management Routes
-
-        Route::group(['prefix' => 'program/category','middleware' => ['role:end_user']], function () {
+        Route::prefix('program/category')->group(function () {
             Route::get('view', [ProblemCategoryController::class, 'ProblemCategoryView'])->name('problem.category.view');
             Route::get('add', [ProblemCategoryController::class, 'ProblemCategoryAdd'])->name('problem.category.add');
             Route::post('store', [ProblemCategoryController::class, 'ProblemCategoryStore'])->name('problem.category.store');
@@ -111,7 +102,13 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
             Route::post('update/store/{id}', [ProblemCategoryController::class, 'ProblemCategoryStoreUpdate'])->name('problem.category.update.store');
             Route::get('delete/{id}', [ProblemCategoryController::class, 'ProblemCategoryDelete'])->name('problem.category.delete');
         });
+        // End of Group for Problem Category Management Routes
 
+        // Start of Group for Problem Category Management Routes
+        Route::prefix('ticket')->group(function () {
+            Route::get('view', [TicketController::class, 'TicketView'])->name('ticket.view');
+        });
+        // End of Group for Problem Category Management Routes
 
     }); //End Of Auth Middleware Group
 

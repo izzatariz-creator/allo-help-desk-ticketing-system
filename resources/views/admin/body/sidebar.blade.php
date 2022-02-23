@@ -125,6 +125,20 @@ $route = Route::current()->getName();
             <hr>
             <li class="header nav-small-cap">Ticket Management</li>
 
+            <li class="treeview {{ ($prefix == '/ticket')?'active':'' }}">
+                <a href="#">
+                    <i data-feather="file-text"></i>
+                    <span>Manage Ticket</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{ ($route == 'ticket.view')?'active':'' }}"><a href="{{ route('ticket.view') }}"><i class="ti-more"></i>View Ticket</a></li>
+                    <li class="{{ ($route == 'problem.category.add')?'active':'' }}"><a href="{{ route('problem.category.add') }}"><i class="ti-more"></i>Add Ticket</a></li>
+                </ul>
+            </li>
+
         </ul>
     </section>
 

@@ -31,6 +31,7 @@
                     <div class="box">
                         <div class="box-header with-border">
                             <h3 class="box-title">Ticket List</h3>
+                            <a href="{{ route('ticket.create') }}" style="float: right;" class="btn btn-rounded btn-success mb-5"> Add Ticket</a>
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
@@ -38,14 +39,14 @@
                                 <table id="tablebaru" class="table table-bordered table-striped" style="width:100%">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
-                                            <th>Ticket Reference</th>
+                                            <th width="5%">No</th>
+                                            <th width="5%">Ticket Reference</th>
                                             <th>Ticket Title</th>
-                                            <th>Category</th>
-                                            <th>Priority</th>
-                                            <th>Status</th>
-                                            <th>RSP</th>
-                                            <th>Actions</th>
+                                            <th width="15%">Category</th>
+                                            <th width="10%">Priority</th>
+                                            <th width="10%">Status</th>
+                                            <th width="10%">RSP</th>
+                                            <th width="10%">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -54,10 +55,30 @@
                                             <td>{{ $key+1 }}</td>
                                             <td>{{ $ticket->ticket_ref }}</td>
                                             <td>{{ $ticket->title }}</td>
-                                            <td>{{ $ticket->category }}</td>
-                                            <td>{{ $ticket->priority }}</td>
-                                            <td>{{ $ticket->status }}</td>
-                                            <td>{{ $ticket->rsp_id }}</td>
+                                            <td>{{ $ticket['category']['name'] }}</td>
+                                            <td>
+                                                @if ($ticket->priority=="Low")
+                                                <span class="badge rounded-pill bg-success">Low</span>
+                                                @else
+                                                @endif
+
+                                                @if ($ticket->priority=="Normal")
+                                                <span class="badge rounded-pill bg-warning text-dark">Normal</span>
+                                                @else
+                                                @endif
+
+                                                @if ($ticket->priority=="High")
+                                                <span class="badge rounded-pill bg-danger ">High</span>
+                                                @else
+                                                @endif
+                                            </td>
+                                            <td>
+                                                @if ($ticket->status=="Open")
+                                                <span class="badge bg-success">Open</span>
+                                                @else
+                                                @endif
+                                            </td>
+                                            <td>{{ $ticket['retail_service_provider']['name'] }}</td>
                                             <td>
                                                 
                                             </td>

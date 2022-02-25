@@ -6,15 +6,16 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use \Laravel\Fortify\Contracts\LogoutResponse;
+use Illuminate\Support\Facades\Session;
 
 class AdminController extends Controller
 {
-    public function destroy(Request $request) : LogoutResponse
+    public function destroy(Request $request)
     {
-        $request->session()->invalidate();
-
-        $request->session()->regenerateToken();
+        Session::flush();
         
-        return app(LogoutResponse::class);
+        Auth::logout();
+
+        return redirect('login');
     }
 }

@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\Setup\ModemController;
 use App\Http\Controllers\Backend\Setup\ProblemCategoryController;
 use App\Http\Controllers\Backend\Setup\RetailServiceProviderController;
 use App\Http\Controllers\Backend\Setup\RouterController;
+use App\Http\Controllers\Backend\Setup\TicketCategoryController;
 use App\Http\Controllers\Backend\Ticket\TicketController;
 use App\Http\Controllers\Backend\User\ProfileController;
 use App\Http\Controllers\Backend\User\UserController;
@@ -93,20 +94,22 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         });
         // End of Group for Router Management Routes
 
-        // Start of Group for Problem Category Management Routes
-        Route::prefix('program/category')->group(function () {
-            Route::get('view', [ProblemCategoryController::class, 'ProblemCategoryView'])->name('problem.category.view');
-            Route::get('add', [ProblemCategoryController::class, 'ProblemCategoryAdd'])->name('problem.category.add');
-            Route::post('store', [ProblemCategoryController::class, 'ProblemCategoryStore'])->name('problem.category.store');
-            Route::get('edit/{id}', [ProblemCategoryController::class, 'ProblemCategoryEdit'])->name('problem.category.edit');
-            Route::post('update/store/{id}', [ProblemCategoryController::class, 'ProblemCategoryStoreUpdate'])->name('problem.category.update.store');
-            Route::get('delete/{id}', [ProblemCategoryController::class, 'ProblemCategoryDelete'])->name('problem.category.delete');
+        // Start of Group for Ticket Category Management Routes
+        Route::prefix('ticket/category')->group(function () {
+            Route::get('view', [TicketCategoryController::class, 'TicketCategoryView'])->name('ticket.category.view');
+            Route::get('add', [TicketCategoryController::class, 'TicketCategoryAdd'])->name('ticket.category.add');
+            Route::post('store', [TicketCategoryController::class, 'TicketCategoryStore'])->name('ticket.category.store');
+            Route::get('edit/{id}', [TicketCategoryController::class, 'TicketCategoryEdit'])->name('ticket.category.edit');
+            Route::post('update/store/{id}', [TicketCategoryController::class, 'TicketCategoryStoreUpdate'])->name('ticket.category.update.store');
+            Route::get('delete/{id}', [TicketCategoryController::class, 'TicketCategoryDelete'])->name('ticket.category.delete');
         });
-        // End of Group for Problem Category Management Routes
+        // End of Group for Ticket Category Management Routes
 
         // Start of Group for Problem Category Management Routes
         Route::prefix('ticket')->group(function () {
             Route::get('view', [TicketController::class, 'TicketView'])->name('ticket.view');
+            Route::get('create', [TicketController::class, 'TicketCreate'])->name('ticket.create');
+            Route::post('store', [TicketController::class, 'TicketStore'])->name('ticket.store');
         });
         // End of Group for Problem Category Management Routes
 

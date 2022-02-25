@@ -111,14 +111,14 @@ $route = Route::current()->getName();
             <li class="treeview {{ ($prefix == '/program/category')?'active':'' }}">
                 <a href="#">
                     <i data-feather="hard-drive"></i>
-                    <span>Manage Prob. Category</span>
+                    <span>Manage Ticket Category</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-right pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="{{ ($route == 'problem.category.view')?'active':'' }}"><a href="{{ route('problem.category.view') }}"><i class="ti-more"></i>View Problem Category</a></li>
-                    <li class="{{ ($route == 'problem.category.add')?'active':'' }}"><a href="{{ route('problem.category.add') }}"><i class="ti-more"></i>Add Problem Category</a></li>
+                    <li class="{{ ($route == 'ticket.category.view')?'active':'' }}"><a href="{{ route('ticket.category.view') }}"><i class="ti-more"></i>View Ticket Category</a></li>
+                    <li class="{{ ($route == 'ticket.category.add')?'active':'' }}"><a href="{{ route('ticket.category.add') }}"><i class="ti-more"></i>Add Ticket Category</a></li>
                 </ul>
             </li>
 
@@ -135,7 +135,7 @@ $route = Route::current()->getName();
                 </a>
                 <ul class="treeview-menu">
                     <li class="{{ ($route == 'ticket.view')?'active':'' }}"><a href="{{ route('ticket.view') }}"><i class="ti-more"></i>View Ticket</a></li>
-                    <li class="{{ ($route == 'problem.category.add')?'active':'' }}"><a href="{{ route('problem.category.add') }}"><i class="ti-more"></i>Add Ticket</a></li>
+                    <li class="{{ ($route == 'ticket.create')?'active':'' }}"><a href="{{ route('ticket.create') }}"><i class="ti-more"></i>Add Ticket</a></li>
                 </ul>
             </li>
 

@@ -55,7 +55,7 @@
                                                 <td>
                                                     @if(!empty($user->getRoleNames()))
                                                     @foreach($user->getRoleNames() as $v)
-                                                    <label class="badge badge-success">{{ $v }}</label>
+                                                    <label class="badge rounded-pill bg-info text-light">{{ $v }}</label>
                                                     @endforeach
                                                     @endif
                                                 </td>

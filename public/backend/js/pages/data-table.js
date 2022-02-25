@@ -72,7 +72,7 @@ $(function () {
 	
 	//---------------Form inputs
 	var table = $('#example6').DataTable();
- 
+
     $('button').click( function() {
         var data = table.$('input, select').serialize();
         alert(
@@ -89,20 +89,28 @@ $(function () {
             initComplete: function () {
                 this.api().columns([3,4,5,6]).every( function () {
                     var column = this;
-                    var select = $('<select><option value="">Filter Column</option></select>')
-                        .appendTo( $(column.footer()).empty() )
+                    
+                    var select = $('<select style="margin-top: 10px;"><option value="">Filter Column</option></select>')
+                        .appendTo( $(column.header()) )
                         .on( 'change', function () {
                             var val = $.fn.dataTable.util.escapeRegex(
                                 $(this).val()
                             );
+                        
+                            $( select )   .click( function(e) {
+                                e.stopPropagation();
+                          });
      
                             column
                                 .search( val ? '^'+val+'$' : '', true, false )
                                 .draw();
                         } );
+
+                        
      
                     column.data().unique().sort().each( function ( d, j ) {
-                        select.append( '<option value="'+d+'">'+d.substr(0,30)+'</option>' )
+                        var val = $('<div/>').html(d).text();
+                        select.append( '<option value="' + val + '">' + val + '</option>' );
                     } );
                 } );
             }

@@ -9,13 +9,13 @@
         <div class="content-header">
             <div class="d-flex align-items-center">
                 <div class="mr-auto">
-                    <h3 class="page-title">Add Problem Category</h3>
+                    <h3 class="page-title">Add Ticket Category</h3>
                     <div class="d-inline-block align-items-center">
                         <nav>
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#"><i class="mdi mdi-wifi"></i></a></li>
-                                <li class="breadcrumb-item" aria-current="page">Manage Problem Category</li>
-                                <li class="breadcrumb-item active" aria-current="page">Add Problem Category</li>
+                                <li class="breadcrumb-item" aria-current="page">Manage Ticket Category</li>
+                                <li class="breadcrumb-item active" aria-current="page">Add Ticket Category</li>
                             </ol>
                         </nav>
                     </div>
@@ -29,7 +29,7 @@
             <!-- Basic Forms -->
             <div class="box">
                 <div class="box-header with-border">
-                    <h4 class="box-title">Add Problem Category</h4>
+                    <h4 class="box-title">Add Ticket Category</h4>
 
                 </div>
                 <!-- /.box-header -->
@@ -37,13 +37,13 @@
                     <div class="row">
                         <div class="col">
 
-                            <form method="post" action="{{ route('problem.category.store') }}">
+                            <form method="post" action="{{ route('ticket.category.store') }}">
                                 @csrf
                                 <div class="row">
                                     <div class="col-12">
 
                                         <div class="form-group">
-                                            <h5>Problem Category Name <span class="text-danger">*</span></h5>
+                                            <h5>Ticket Category <span class="text-danger">*</span></h5>
                                             <div class="controls">
                                                 <input type="text" name="name" class="form-control">
                                                 @error('name')

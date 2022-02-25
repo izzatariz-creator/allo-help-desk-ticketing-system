@@ -9,13 +9,13 @@
         <div class="content-header">
             <div class="d-flex align-items-center">
                 <div class="mr-auto">
-                    <h3 class="page-title">View Problem Category</h3>
+                    <h3 class="page-title">View Ticket Category</h3>
                     <div class="d-inline-block align-items-center">
                         <nav>
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#"><i class="mdi mdi-wifi"></i></a></li>
-                                <li class="breadcrumb-item" aria-current="page">Manage Problem Category</li>
-                                <li class="breadcrumb-item active" aria-current="page">View Problem Category</li>
+                                <li class="breadcrumb-item" aria-current="page">Manage Ticket Category</li>
+                                <li class="breadcrumb-item active" aria-current="page">View Ticket Category</li>
                             </ol>
                         </nav>
                     </div>
@@ -32,9 +32,9 @@
 
                     <div class="box">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Problem Category List</h3>
-                            <a href="{{ route('problem.category.add') }}" style="float: right;"
-                                class="btn btn-rounded btn-success mb-5"> Add Problem Category</a>
+                            <h3 class="box-title">Ticket Category List</h3>
+                            <a href="{{ route('ticket.category.add') }}" style="float: right;"
+                                class="btn btn-rounded btn-success mb-5"> Add Ticket Category</a>
 
                         </div>
                         <!-- /.box-header -->
@@ -50,14 +50,14 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($allData as $key => $pc )
+                                        @foreach($allData as $key => $tc )
                                         <tr>
                                             <td>{{ $key+1 }}</td>
-                                            <td> {{ $pc->name }}</td>
+                                            <td> {{ $tc->name }}</td>
                                             <td>
-                                                <a href="{{ route('problem.category.edit',$pc->id) }}"
+                                                <a href="{{ route('ticket.category.edit',$tc->id) }}"
                                                     class="btn btn-info">Edit</a>
-                                                <a href="{{ route('problem.category.delete',$pc->id) }}"
+                                                <a href="{{ route('ticket.category.delete',$tc->id) }}"
                                                     class="btn btn-danger" id="delete">Delete</a>
                                             </td>
 

@@ -15,7 +15,7 @@ class Ticket extends Model
         'title',
         'description',
         'status',
-        'category',
+        'category_id',
         'priority',
         'address',
         'rsp_id',
@@ -35,6 +35,10 @@ class Ticket extends Model
 
     public function router(){
         return $this->belongsTo(Router::class, 'router_id','id');
+    }
+
+    public function category(){
+        return $this->belongsTo(TicketCategory::class, 'category_id','id');
     }
 
     public function user(){

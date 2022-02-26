@@ -10,7 +10,7 @@ class RouterController extends Controller
 {
     public function RouterView()
     {
-        $data['allData'] = Router::all();
+        $data['allData'] = Router::orderBy('name', 'ASC')->get();
         return view('backend.setup.router.view_router', $data);
     }
 

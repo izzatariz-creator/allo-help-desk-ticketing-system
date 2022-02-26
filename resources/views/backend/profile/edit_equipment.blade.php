@@ -46,9 +46,9 @@
                                             <div class="col-md-6">
 
                                                 <div class="form-group">
-                                                    <h5>Retail Service Provider <span class="text-danger">*</span></h5>
+                                                    <h5>Retail Service Provider</h5>
                                                     <div class="controls">
-                                                        <select name="rsp_id" required="" class="form-control">
+                                                        <select name="rsp_id" class="form-control">
 															<option value="" selected="" disabled="">Select Retail Service Provider</option>
 															@foreach($rspData as $rsp)
 															<option value="{{ $rsp->id }}" {{ ($editData->rsp_id ==
@@ -61,9 +61,9 @@
 
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <h5>Modem <span class="text-danger">*</span></h5>
+                                                    <h5>Modem</h5>
                                                     <div class="controls">
-                                                        <select name="modem_id" required="" class="form-control">
+                                                        <select name="modem_id" class="form-control">
 															<option value="" selected="" disabled="">Select Modem</option>
 															@foreach($modemData as $modem)
 															<option value="{{ $modem->id }}" {{ ($editData->modem_id ==
@@ -82,9 +82,9 @@
                                             <div class="col-md-6">
 
                                                 <div class="form-group">
-                                                    <h5>Router <span class="text-danger">*</span></h5>
+                                                    <h5>Router</h5>
                                                     <div class="controls">
-                                                        <select name="router_id" required="" class="form-control">
+                                                        <select name="router_id" class="form-control">
 															<option value="" selected="" disabled="">Select Router</option>
 															@foreach($routerData as $router)
 															<option value="{{ $router->id }}" {{ ($editData->router_id ==

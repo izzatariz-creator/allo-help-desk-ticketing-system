@@ -87,10 +87,10 @@ $(function () {
 	$(document).ready(function() {
         $('#tablebaru').DataTable( {
             initComplete: function () {
-                this.api().columns([3,4,5,6]).every( function () {
+                this.api().columns([4,5,6,7]).every( function () {
                     var column = this;
                     
-                    var select = $('<select style="margin-top: 10px;"><option value="">Filter Column</option></select>')
+                    var select = $('<br><select style="margin-top: 10px;"><option value="">Filter Column</option></select>')
                         .appendTo( $(column.header()) )
                         .on( 'change', function () {
                             var val = $.fn.dataTable.util.escapeRegex(

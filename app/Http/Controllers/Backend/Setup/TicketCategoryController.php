@@ -10,7 +10,7 @@ class TicketCategoryController extends Controller
 {
     public function TicketCategoryView()
     {
-        $data['allData'] = TicketCategory::all();
+        $data['allData'] = TicketCategory::orderBy('name', 'ASC')->get();
         return view('backend.setup.ticket_category.view_ticket_category', $data);
     }
 

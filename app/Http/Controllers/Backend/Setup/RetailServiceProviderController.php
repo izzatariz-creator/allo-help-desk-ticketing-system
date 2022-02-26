@@ -10,7 +10,7 @@ class RetailServiceProviderController extends Controller
 {
     public function RetailServiceProviderView()
     {
-        $data['allData'] = RetailServiceProvider::all();
+        $data['allData'] = RetailServiceProvider::orderBy('name', 'ASC')->get();
         return view('backend.setup.rsp.view_rsp', $data);
     }
 

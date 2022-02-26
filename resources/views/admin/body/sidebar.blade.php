@@ -135,7 +135,7 @@ $route = Route::current()->getName();
                 </a>
                 <ul class="treeview-menu">
                     <li class="{{ ($route == 'ticket.view')?'active':'' }}"><a href="{{ route('ticket.view') }}"><i class="ti-more"></i>View Ticket</a></li>
-                    <li class="{{ ($route == 'ticket.create')?'active':'' }}"><a href="{{ route('ticket.create') }}"><i class="ti-more"></i>Add Ticket</a></li>
+                    <li class="{{ ($route == 'ticket.create')?'active':'' }}"><a href="{{ route('ticket.create') }}"><i class="ti-more"></i>Create Ticket</a></li>
                 </ul>
             </li>
 

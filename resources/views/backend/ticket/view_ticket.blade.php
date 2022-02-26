@@ -39,8 +39,9 @@
                                 <table id="tablebaru" class="table table-bordered table-striped" style="width:100%">
                                     <thead>
                                         <tr>
-                                            <th width="5%">No</th>
+                                            <th width="2%">No</th>
                                             <th width="5%">Ticket Reference</th>
+                                            <th width="10%">Ticket Submitter</th>
                                             <th>Ticket Title</th>
                                             <th width="15%">Category</th>
                                             <th width="10%">Priority</th>
@@ -54,6 +55,7 @@
                                         <tr>
                                             <td>{{ $key+1 }}</td>
                                             <td>{{ $ticket->ticket_ref }}</td>
+                                            <td>{{ $ticket['user']['name'] }}</td>
                                             <td>{{ $ticket->title }}</td>
                                             <td>{{ $ticket['category']['name'] }}</td>
                                             <td>
@@ -77,25 +79,35 @@
                                                 <span class="badge bg-success">Open</span>
                                                 @else
                                                 @endif
+                                                @if ($ticket->status=="Pending")
+                                                <span class="badge bg-success">Pending</span>
+                                                @else
+                                                @endif
+                                                @if ($ticket->status=="On Hold")
+                                                <span class="badge bg-success">On Hold</span>
+                                                @else
+                                                @endif
+                                                @if ($ticket->status=="Solved")
+                                                <span class="badge bg-success">Solved</span>
+                                                @else
+                                                @endif
+                                                @if ($ticket->status=="Closed")
+                                                <span class="badge bg-success">Closed</span>
+                                                @else
+                                                @endif
                                             </td>
                                             <td>{{ $ticket['retail_service_provider']['name'] }}</td>
                                             <td>
-                                                
+                                                <a href="{{ route('ticket.edit',$ticket->id) }}"
+                                                    class="btn btn-info">Edit</a>
                                             </td>
                                         </tr>
                                         @endforeach
                                     </tbody>
                                     <tfoot>
-                                        <tr>
+                                        {{-- <tr>
                                             <th></th>
-                                            <th></th>
-                                            <th></th>
-                                            <th>Category</th>
-                                            <th>Priority</th>
-                                            <th>Status</th>
-                                            <th>RSP</th>
-                                            <th></th>
-                                        </tr>
+                                        </tr> --}}
                                     </tfoot>
                                 </table>
                             </div>

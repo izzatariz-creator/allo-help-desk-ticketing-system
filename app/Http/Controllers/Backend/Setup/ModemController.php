@@ -10,7 +10,7 @@ class ModemController extends Controller
 {
     public function ModemView()
     {
-        $data['allData'] = Modem::all();
+        $data['allData'] = Modem::orderBy('name', 'ASC')->get();
         return view('backend.setup.modem.view_modem', $data);
     }
 

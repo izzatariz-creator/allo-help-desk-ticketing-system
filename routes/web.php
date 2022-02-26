@@ -105,13 +105,15 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         });
         // End of Group for Ticket Category Management Routes
 
-        // Start of Group for Problem Category Management Routes
+        // Start of Group for Ticket Management Routes
         Route::prefix('ticket')->group(function () {
             Route::get('view', [TicketController::class, 'TicketView'])->name('ticket.view');
             Route::get('create', [TicketController::class, 'TicketCreate'])->name('ticket.create');
             Route::post('store', [TicketController::class, 'TicketStore'])->name('ticket.store');
+            Route::get('edit/{id}', [TicketController::class, 'TicketEdit'])->name('ticket.edit');
+            Route::post('update/store/{id}', [TicketController::class, 'TicketStoreUpdate'])->name('ticket.update.store');
         });
-        // End of Group for Problem Category Management Routes
+        // End of Group for Ticket Management Routes
 
     }); //End Of Auth Middleware Group
 

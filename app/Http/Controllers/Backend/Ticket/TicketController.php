@@ -140,4 +140,18 @@ class TicketController extends Controller
 
     }
 
+    public function TicketDelete($id){
+
+        $ticket = Ticket::find($id);
+        $ticket->delete();
+
+        $notification = array(
+            'message' => 'Ticket Deleted Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('ticket.view')->with($notification);
+
+    }
+
 }

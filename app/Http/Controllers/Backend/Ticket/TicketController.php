@@ -174,14 +174,6 @@ class TicketController extends Controller
     {
         $data['editData'] = Ticket::find($id);
 
-        $data['userData'] = User::all();
-        $data['techData'] = User::role('technician')->get();
-
-        $data['categoryData'] = TicketCategory::orderBy('name', 'asc')->get();
-        $data['rspData'] = RetailServiceProvider::orderBy('name', 'asc')->get();
-        $data['modemData'] = Modem::orderBy('name', 'asc')->get();
-        $data['routerData'] = Router::orderBy('name', 'asc')->get();
-
         $pdf = PDF::loadView('backend.ticket.ticket_detail_pdf', $data);
 		return $pdf->stream('document.pdf');
     }

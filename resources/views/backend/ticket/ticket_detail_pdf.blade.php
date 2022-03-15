@@ -112,7 +112,8 @@
         <tr>
             <td>10</td>
             <td><b>Assigned Technician</b></td>
-            <td>{{ $editData['technician']['name'] }} </td>
+            <td>{{ isset($editData['technician']['name']) ? $editData['technician']['name'] : ''}}</td>
+            
         </tr>
         <tr>
             <td>11</td>

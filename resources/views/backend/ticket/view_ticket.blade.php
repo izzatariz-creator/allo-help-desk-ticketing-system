@@ -99,7 +99,7 @@
                                             <td>{{ $ticket['retail_service_provider']['name'] }}</td>
                                             <td>
                                                 <a href="{{ route('ticket.view.detail',$ticket->id) }}" class="btn btn-success">View</a>
-                                                <a href="{{ route('ticket.detail.pdf',$ticket->id) }}" class="btn btn-info">Edit</a>
+                                                <a href="{{ route('ticket.edit',$ticket->id) }}" class="btn btn-info">Edit</a>
                                                 <a href="{{ route('ticket.delete',$ticket->id) }}" id="delete" class="btn btn-danger">Delete</a>
                                             </td>
                                         </tr>

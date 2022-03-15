@@ -123,7 +123,7 @@
 
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <h5 style="padding-top: 27px;">Priority</h5>
+                                                    <h5 style="padding-top: 15px;">Priority</h5>
                                                     <div class="controls">
                                                         <select name="priority" disabled="" tabindex="-1" aria-hidden="true" class="form-control">
 															<option value="" selected="" disabled="">Select Priority</option>
@@ -257,9 +257,9 @@
                                 </div> <!-- End Row -->
                     
                                         <div class="text-xs-right" style="padding-top: 10px;">
-                                            <a href="{{ route('ticket.edit',$editData->id) }}" class="btn btn-rounded btn-success mb-5">Edit</a>
+                                            <a href="{{ route('ticket.edit',$editData->id) }}" class="btn btn-rounded btn-info mb-5">Edit</a>
                                             <a href="{{ route('ticket.detail.pdf',$editData->id) }}" class="btn btn-rounded btn-primary mb-5">PDF</a>
-                                            <a href="{{ route('ticket.edit',$editData->id) }}" class="btn btn-rounded btn-danger mb-5">Close Ticket</a>
+                                            <a href="" class="btn btn-rounded btn-danger mb-5">Close Ticket</a>
                                         </div>
                             </form>
 

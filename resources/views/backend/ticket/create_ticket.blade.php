@@ -92,7 +92,7 @@
 
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <h5 style="padding-top: 27px;">Priority <span class="text-danger">*</span></h5>
+                                                    <h5 style="padding-top: 15px;">Priority <span class="text-danger">*</span></h5>
                                                     <div class="controls">
                                                         <select name="priority" required="" class="form-control">
 															<option value="" selected="" disabled="">Select Priority</option>

@@ -12,6 +12,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class TicketController extends Controller
 {
@@ -169,4 +170,19 @@ class TicketController extends Controller
         return view('backend.ticket.view_ticket_detail', $data);
     }
 
+    public function TicketDetailsPDF($id)
+    {
+        $data['editData'] = Ticket::find($id);
+
+        $data['userData'] = User::all();
+        $data['techData'] = User::role('technician')->get();
+
+        $data['categoryData'] = TicketCategory::orderBy('name', 'asc')->get();
+        $data['rspData'] = RetailServiceProvider::orderBy('name', 'asc')->get();
+        $data['modemData'] = Modem::orderBy('name', 'asc')->get();
+        $data['routerData'] = Router::orderBy('name', 'asc')->get();
+
+        $pdf = PDF::loadView('backend.ticket.ticket_detail_pdf', $data);
+		return $pdf->stream('document.pdf');
+    }
 }

@@ -258,7 +258,7 @@
                     
                                         <div class="text-xs-right" style="padding-top: 10px;">
                                             <a href="{{ route('ticket.edit',$editData->id) }}" class="btn btn-rounded btn-success mb-5">Edit</a>
-                                            <a href="{{ route('ticket.edit',$editData->id) }}" class="btn btn-rounded btn-primary mb-5">PDF</a>
+                                            <a href="{{ route('ticket.detail.pdf',$editData->id) }}" class="btn btn-rounded btn-primary mb-5">PDF</a>
                                             <a href="{{ route('ticket.edit',$editData->id) }}" class="btn btn-rounded btn-danger mb-5">Close Ticket</a>
                                         </div>
                             </form>

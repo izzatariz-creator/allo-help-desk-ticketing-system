@@ -44,4 +44,8 @@ class Ticket extends Model
     public function user(){
         return $this->belongsTo(User::class, 'user_id','id');
     }
+
+    public function technician(){
+        return $this->belongsTo(User::class, 'technician_id','id');
+    }
 }

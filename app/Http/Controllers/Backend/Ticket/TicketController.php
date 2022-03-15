@@ -154,4 +154,19 @@ class TicketController extends Controller
 
     }
 
+    public function TicketViewDetail($id)
+    {
+        $data['editData'] = Ticket::find($id);
+
+        $data['userData'] = User::all();
+        $data['techData'] = User::role('technician')->get();
+
+        $data['categoryData'] = TicketCategory::orderBy('name', 'asc')->get();
+        $data['rspData'] = RetailServiceProvider::orderBy('name', 'asc')->get();
+        $data['modemData'] = Modem::orderBy('name', 'asc')->get();
+        $data['routerData'] = Router::orderBy('name', 'asc')->get();
+
+        return view('backend.ticket.view_ticket_detail', $data);
+    }
+
 }

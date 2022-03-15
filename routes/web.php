@@ -113,6 +113,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
             Route::get('edit/{id}', [TicketController::class, 'TicketEdit'])->name('ticket.edit');
             Route::post('update/store/{id}', [TicketController::class, 'TicketStoreUpdate'])->name('ticket.update.store');
             Route::get('delete/{id}', [TicketController::class, 'TicketDelete'])->name('ticket.delete');
+            Route::get('view/detail/{id}', [TicketController::class, 'TicketViewDetail'])->name('ticket.view.detail');
         });
         // End of Group for Ticket Management Routes
 

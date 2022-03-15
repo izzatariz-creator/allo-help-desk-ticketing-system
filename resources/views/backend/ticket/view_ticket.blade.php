@@ -47,7 +47,7 @@
                                             <th width="10%">Priority</th>
                                             <th width="10%">Status</th>
                                             <th width="10%">RSP</th>
-                                            <th width="10%">Actions</th>
+                                            <th width="14%">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -98,6 +98,7 @@
                                             </td>
                                             <td>{{ $ticket['retail_service_provider']['name'] }}</td>
                                             <td>
+                                                <a href="{{ route('ticket.view.detail',$ticket->id) }}" class="btn btn-success">View</a>
                                                 <a href="{{ route('ticket.edit',$ticket->id) }}" class="btn btn-info">Edit</a>
                                                 <a href="{{ route('ticket.delete',$ticket->id) }}" id="delete" class="btn btn-danger">Delete</a>
                                             </td>

@@ -50,6 +50,7 @@
                     <div class="auth-inner row m-0">
                         <!-- Brand logo-->
                         <a class="brand-logo" href="{{ route('register') }}">
+                            <img src="{{ asset('backend/images/allo-tnb.png') }}" alt="" style="width:35px;height:35px;">
                             <h2 class="brand-text text-primary ms-1">Allo HDTS</h2>
                         </a>
                         <!-- /Brand logo-->

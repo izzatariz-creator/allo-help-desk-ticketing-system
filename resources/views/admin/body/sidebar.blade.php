@@ -12,7 +12,7 @@ $route = Route::current()->getName();
                 <a href="{{ route('dashboard') }}">
                     <!-- logo for regular state and mobile devices -->
                     <div class="d-flex align-items-center justify-content-center">
-                        <img src="{{ asset('backend/images/logo-dark.png') }}" alt="">
+                        <img src="{{ asset('backend/images/allo-tnb.png') }}" alt="" style="width:35px;height:35px;">
                         <h3><b>&nbsp Allo</b> HDTS</h3>
                     </div>
                 </a>

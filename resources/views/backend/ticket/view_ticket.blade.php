@@ -36,7 +36,7 @@
                         <!-- /.box-header -->
                         <div class="box-body">
                             <div class="table-responsive">
-                                <table id="tablebaru" class="table table-bordered table-striped" style="width:100%">
+                                <table id="example1" class="table table-bordered table-striped" style="width:100%">
                                     <thead>
                                         <tr>
                                             <th width="2%">No</th>
@@ -44,8 +44,8 @@
                                             <th width="10%">Ticket Submitter</th>
                                             <th>Ticket Title</th>
                                             <th width="15%">Category</th>
-                                            <th width="10%">Priority</th>
-                                            <th width="10%">Status</th>
+                                            <th width="5%">Priority</th>
+                                            <th width="5%">Status</th>
                                             <th width="10%">RSP</th>
                                             <th width="14%">Actions</th>
                                         </tr>

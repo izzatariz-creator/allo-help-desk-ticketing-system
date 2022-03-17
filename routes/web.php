@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Backend\Permission\PermissionController;
+use App\Http\Controllers\Backend\Role\RoleController;
 use App\Http\Controllers\Backend\Setup\ModemController;
-use App\Http\Controllers\Backend\Setup\ProblemCategoryController;
 use App\Http\Controllers\Backend\Setup\RetailServiceProviderController;
 use App\Http\Controllers\Backend\Setup\RouterController;
 use App\Http\Controllers\Backend\Setup\TicketCategoryController;
@@ -117,6 +118,18 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
             Route::get('ticket/detail/{id}', [TicketController::class, 'TicketDetailsPDF'])->name('ticket.detail.pdf');
         });
         // End of Group for Ticket Management Routes
+
+        // Start of Group for Role Management Routes
+        Route::prefix('role')->group(function () {
+            Route::get('view', [RoleController::class, 'RoleView'])->name('role.view');
+        });
+        // End of Group for Role Management Routes
+
+        // Start of Group for Permission Management Routes
+        Route::prefix('permission')->group(function () {
+            Route::get('view', [PermissionController::class, 'PermissionView'])->name('permission.view');
+        });
+        // End of Group for Permission Management Routes
 
     }); //End Of Auth Middleware Group
 

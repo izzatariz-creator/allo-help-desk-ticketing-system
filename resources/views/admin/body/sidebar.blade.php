@@ -31,7 +31,7 @@ $route = Route::current()->getName();
 
             <hr>
 
-            <li class="header nav-small-cap">General Pages</li>
+            <li class="header nav-small-cap">Admin Pages</li>
 
             <li class="treeview {{ ($prefix == '/user')?'active':'' }}">
                 <a href="#">
@@ -46,6 +46,24 @@ $route = Route::current()->getName();
                     <li class="{{ ($route == 'user.add')?'active':'' }}"><a href="{{ route('user.add') }}"><i class="ti-more"></i>Add User</a></li>
                 </ul>
             </li>
+
+            <li class="treeview {{ ($prefix == '/role')?'active':'' }}">
+                <a href="#">
+                    <i data-feather="shield"></i>
+                    <span>Manage Role & Perms</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{ ($route == 'role.view')?'active':'' }}"><a href="{{ route('role.view') }}"><i class="ti-more"></i>View Role</a></li>
+                    <li class="{{ ($route == 'permission.view')?'active':'' }}"><a href="{{ route('permission.view') }}"><i class="ti-more"></i>View Permission</a></li>
+                </ul>
+            </li>
+
+            <hr>
+
+            <li class="header nav-small-cap">General Pages</li>
 
             <li class="treeview {{ ($prefix == '/profile')?'active':'' }}">
                 <a href="#">
@@ -110,7 +128,7 @@ $route = Route::current()->getName();
 
             <li class="treeview {{ ($prefix == '/program/category')?'active':'' }}">
                 <a href="#">
-                    <i data-feather="hard-drive"></i>
+                    <i data-feather="file-text"></i>
                     <span>Manage Ticket Category</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-right pull-right"></i>
@@ -127,7 +145,7 @@ $route = Route::current()->getName();
 
             <li class="treeview {{ ($prefix == '/ticket')?'active':'' }}">
                 <a href="#">
-                    <i data-feather="file-text"></i>
+                    <i data-feather="film"></i>
                     <span>Manage Ticket</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-right pull-right"></i>

@@ -128,7 +128,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
             Route::post('update/store/{role}', [RoleController::class, 'RoleStoreUpdate'])->name('role.update.store');
             Route::get('delete/{id}', [RoleController::class, 'RoleDelete'])->name('role.delete');
             Route::post('assign/{role}', [RoleController::class, 'RolePermissionAssign'])->name('role.permission.assign');
-            Route::delete('/roles/{role}/permissions/{permission}', [RoleController::class, 'RolePermissionRevoke'])->name('role.permission.revoke');
+            Route::delete('{role}/permissions/{permission}', [RoleController::class, 'RolePermissionRevoke'])->name('role.permission.revoke');
         });
         // End of Group for Role Management Routes
 

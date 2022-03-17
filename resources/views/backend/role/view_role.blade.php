@@ -32,7 +32,7 @@
                     <div class="box">
                         <div class="box-header with-border">
                             <h3 class="box-title">View Role</h3>
-                            <a href="" style="float: right;"
+                            <a href="{{ route('role.add') }}" style="float: right;"
                                 class="btn btn-rounded btn-success mb-5"> Add Role</a>
                         </div>
                         <!-- /.box-header -->

@@ -122,12 +122,16 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         // Start of Group for Role Management Routes
         Route::prefix('role')->group(function () {
             Route::get('view', [RoleController::class, 'RoleView'])->name('role.view');
+            Route::get('add', [RoleController::class, 'RoleAdd'])->name('role.add');
+            Route::post('store', [RoleController::class, 'RoleStore'])->name('role.store');
         });
         // End of Group for Role Management Routes
 
         // Start of Group for Permission Management Routes
         Route::prefix('permission')->group(function () {
             Route::get('view', [PermissionController::class, 'PermissionView'])->name('permission.view');
+            Route::get('add', [PermissionController::class, 'PermissionAdd'])->name('permission.add');
+            Route::post('store', [PermissionController::class, 'PermissionStore'])->name('permission.store');
         });
         // End of Group for Permission Management Routes
 

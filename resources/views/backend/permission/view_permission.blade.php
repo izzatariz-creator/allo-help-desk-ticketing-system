@@ -32,7 +32,7 @@
                     <div class="box">
                         <div class="box-header with-border">
                             <h3 class="box-title">View Permission</h3>
-                            <a href="" style="float: right;"
+                            <a href="{{ route('permission.add') }}" style="float: right;"
                                 class="btn btn-rounded btn-success mb-5"> Add Permission</a>
                         </div>
                         <!-- /.box-header -->

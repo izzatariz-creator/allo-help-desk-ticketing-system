@@ -58,4 +58,17 @@ class PermissionController extends Controller
 
         return redirect()->route('permission.view')->with($notification);
     }
+
+    public function PermissionDelete($id)
+    {
+        $data = Permission::find($id);
+        $data->delete();
+
+        $notification = array(
+            'message' => 'Permission Deleted Successfully',
+            'alert-type' => 'info'
+        );
+
+        return redirect()->route('permission.view')->with($notification);
+    }
 }

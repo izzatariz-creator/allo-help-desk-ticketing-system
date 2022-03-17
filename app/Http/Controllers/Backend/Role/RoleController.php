@@ -58,4 +58,17 @@ class RoleController extends Controller
 
         return redirect()->route('role.view')->with($notification);
     }
+
+    public function RoleDelete($id)
+    {
+        $data = Role::find($id);
+        $data->delete();
+
+        $notification = array(
+            'message' => 'Role Deleted Successfully',
+            'alert-type' => 'info'
+        );
+
+        return redirect()->route('role.view')->with($notification);
+    }
 }

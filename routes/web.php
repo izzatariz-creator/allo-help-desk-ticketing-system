@@ -126,6 +126,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
             Route::post('store', [RoleController::class, 'RoleStore'])->name('role.store');
             Route::get('edit/{id}', [RoleController::class, 'RoleEdit'])->name('role.edit');
             Route::post('update/store/{id}', [RoleController::class, 'RoleStoreUpdate'])->name('role.update.store');
+            Route::get('delete/{id}', [RoleController::class, 'RoleDelete'])->name('role.delete');
         });
         // End of Group for Role Management Routes
 
@@ -136,6 +137,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
             Route::post('store', [PermissionController::class, 'PermissionStore'])->name('permission.store');
             Route::get('edit/{id}', [PermissionController::class, 'PermissionEdit'])->name('permission.edit');
             Route::post('update/store/{id}', [PermissionController::class, 'PermissionStoreUpdate'])->name('permission.update.store');
+            Route::get('delete/{id}', [PermissionController::class, 'PermissionDelete'])->name('permission.delete');
         });
         // End of Group for Permission Management Routes
 

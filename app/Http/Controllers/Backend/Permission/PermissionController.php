@@ -34,4 +34,28 @@ class PermissionController extends Controller
 
         return redirect()->route('permission.view')->with($notification);
     }
+
+    public function PermissionEdit($id)
+    {
+        $editData = Permission::find($id);
+        return view('backend.permission.edit_permission', compact('editData'));
+    }
+
+    public function PermissionStoreUpdate(Request $request, $id)
+    {
+        $data = Permission::find($id);
+
+        $validatedData = $request->validate([
+            'name' => 'required'
+        ]);
+
+        $data->update($validatedData);
+
+        $notification = array(
+            'message' => 'Permission Updated Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('permission.view')->with($notification);
+    }
 }

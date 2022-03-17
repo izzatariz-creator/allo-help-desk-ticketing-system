@@ -34,4 +34,28 @@ class RoleController extends Controller
 
         return redirect()->route('role.view')->with($notification);
     }
+
+    public function RoleEdit($id)
+    {
+        $editData = Role::find($id);
+        return view('backend.role.edit_role', compact('editData'));
+    }
+
+    public function RoleStoreUpdate(Request $request, $id)
+    {
+        $data = Role::find($id);
+
+        $validatedData = $request->validate([
+            'name' => 'required'
+        ]);
+
+        $data->update($validatedData);
+
+        $notification = array(
+            'message' => 'Role Updated Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('role.view')->with($notification);
+    }
 }

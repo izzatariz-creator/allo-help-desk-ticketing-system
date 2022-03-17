@@ -53,7 +53,7 @@
                                             <td>{{ $role->name }}</td>
                                             <td>
                                                 {{-- Edit Button, Pass User ID --}}
-                                                <a href=""
+                                                <a href="{{ route('role.edit', $role->id) }}"
                                                     class="btn btn-info">Edit</a>
                                                 {{-- Delete Button, Pass User ID --}}
                                                 <a href="" class="btn btn-danger"

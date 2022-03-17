@@ -53,7 +53,7 @@
                                             <td>{{ $permission->name }}</td>
                                             <td>
                                                 {{-- Edit Button, Pass User ID --}}
-                                                <a href=""
+                                                <a href="{{ route('permission.edit', $permission->id) }}"
                                                     class="btn btn-info">Edit</a>
                                                 {{-- Delete Button, Pass User ID --}}
                                                 <a href="" class="btn btn-danger"

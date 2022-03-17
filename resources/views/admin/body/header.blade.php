@@ -30,7 +30,7 @@
                 <!-- User Account-->
 
                 <div class="row mt-1 p-3">
-                    <div class="col"><span class="font-weight-bold">{{ $user->name }}</span></div>
+                    <div class="col"><span class="font-weight-bold text-white">{{ $user->name }}</span></div>
                 </div>
 
                 <li class="dropdown user user-menu">

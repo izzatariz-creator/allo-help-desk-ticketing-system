@@ -82,6 +82,8 @@
                     <div class="row mb-4">
                         <div class="col">
 
+                            <h5>Revoke Permission</h5>
+
                         <div class="p-1">
                             @if ($role->permissions)
                                 @foreach ($role->permissions as $role_permission)
@@ -112,7 +114,7 @@
                                     <div class="col-12">
 
                                         <div class="form-group">
-                                            <h5>Permission</h5>
+                                            <h5>Assign Permission</h5>
                                             <div class="controls">
                                                 <select name="permission" class="form-control">
                                                     @foreach($permissions as $permission)

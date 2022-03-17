@@ -49,6 +49,7 @@
             <div class="content-body">
                 <!-- Not authorized-->
                 <div class="misc-wrapper"><a class="brand-logo" href="{{ route('login') }}">
+                        <img src="{{ asset('backend/images/allo-tnb.png') }}" alt="" style="width:35px;height:35px;">
                         <h2 class="brand-text text-primary ms-1">Allo HDTS</h2>
                     </a>
                     <div class="misc-inner p-2 p-sm-3">

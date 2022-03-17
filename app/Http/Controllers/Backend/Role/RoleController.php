@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend\Role;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class RoleController extends Controller
 {
@@ -35,10 +36,10 @@ class RoleController extends Controller
         return redirect()->route('role.view')->with($notification);
     }
 
-    public function RoleEdit($id)
+    public function RoleEdit(Role $role)
     {
-        $editData = Role::find($id);
-        return view('backend.role.edit_role', compact('editData'));
+        $permissions = Permission::all();
+        return view('backend.role.edit_role', compact('role','permissions'));
     }
 
     public function RoleStoreUpdate(Request $request, $id)
@@ -70,5 +71,41 @@ class RoleController extends Controller
         );
 
         return redirect()->route('role.view')->with($notification);
+    }
+
+    public function RolePermissionAssign(Request $request, Role $role)
+    {
+
+        if($role->hasPermissionTo($request->permission)){
+            $notification = array(
+                'message' => 'Permission Existed',
+                'alert-type' => 'warning'
+            );
+            return back()->with($notification);
+        }
+
+        $role->givePermissionTo($request->permission);
+        $notification = array(
+            'message' => 'Permission Added Successfully',
+            'alert-type' => 'success'
+        );
+        return back()->with($notification);
+    }
+
+    public function RolePermissionRevoke(Role $role, Permission $permission)
+    {
+        if($role->hasPermissionTo($permission)){
+            $role->revokePermissionTo($permission);
+            $notification = array(
+                'message' => 'Permission Revoked Successfully',
+                'alert-type' => 'success'
+            );
+            return back()->with($notification);
+        }
+        $notification = array(
+            'message' => 'Permission Not Existed',
+            'alert-type' => 'success'
+        );
+        return back()->with($notification);
     }
 }

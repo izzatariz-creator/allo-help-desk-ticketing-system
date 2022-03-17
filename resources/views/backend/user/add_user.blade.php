@@ -49,11 +49,12 @@
                                                     <h5>User Role <span class="text-danger">*</span></h5>
                                                     <div class="controls">
                                                         <select name="roles" id="roles" required="" class="form-control">
-                                                            <option value="" selected="" disabled="">Select Role
-                                                            </option>
-                                                            <option value="admin">Admin</option>
-                                                            <option value="technician">Technician</option>
-                                                            <option value="end_user">End User</option>
+                                                            <option value="" selected="" disabled="">Select Role</option>
+															@foreach($roles as $role)
+															<option value="{{ $role->id }}"> 
+                                                            {{ $role->name }}</option>
+
+															@endforeach
                                                         </select>
                                                     </div>
                                                 </div>

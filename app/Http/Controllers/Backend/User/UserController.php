@@ -21,7 +21,8 @@ class UserController extends Controller
 
     public function UserAdd()
     {
-        return view('backend.user.add_user');
+        $data['roles']=Role::all();
+        return view('backend.user.add_user',$data);
     }
 
     public function UserStore(Request $request)

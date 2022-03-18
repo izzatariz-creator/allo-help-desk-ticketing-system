@@ -29,6 +29,7 @@ return new class extends Migration
             $table->string('technician_id')->nullable()->comment('Assigned Technician ID');
             $table->timestamps();
             $table->dateTime('date_closed')->nullable();
+            $table->text('remark')->nullable();
         });
     }
 

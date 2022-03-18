@@ -13,6 +13,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Barryvdh\DomPDF\Facade as PDF;
+use Illuminate\Support\Carbon;
 
 class TicketController extends Controller
 {
@@ -176,5 +177,28 @@ class TicketController extends Controller
 
         $pdf = PDF::loadView('backend.ticket.ticket_detail_pdf', $data);
 		return $pdf->stream('document.pdf');
+    }
+    
+    public function TicketClose(Request $request, $id)
+    {
+
+        $validatedData = $request->validate([
+            'remark' => 'required',
+        ]);
+
+        $data = Ticket::find($id);
+
+        $data->remark = $request->remark;
+        $data->status = "Closed";
+        $data->date_closed = Carbon::now();
+        
+        $data->save();
+
+        $notification = array(
+            'message' => 'Ticket Closed Successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->route('ticket.view')->with($notification);
     }
 }

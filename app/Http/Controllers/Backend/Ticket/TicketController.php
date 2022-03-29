@@ -19,7 +19,7 @@ class TicketController extends Controller
 {
     public function TicketView()
     {
-        $data['allData'] = Ticket::all();
+        $data['allData'] = Ticket::orderBy('created_at', 'DESC')->get();
         return view('backend.ticket.view_ticket', $data);
     }
 

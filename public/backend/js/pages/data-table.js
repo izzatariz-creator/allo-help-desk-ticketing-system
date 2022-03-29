@@ -99,15 +99,15 @@ $(function () {
                         
                             $( select )   .click( function(e) {
                                 e.stopPropagation();
-                          });
-     
+                        });
+    
                             column
                                 .search( val ? '^'+val+'$' : '', true, false )
                                 .draw();
                         } );
 
                         
-     
+    
                     column.data().unique().sort().each( function ( d, j ) {
                         var val = $('<div/>').html(d).text();
                         select.append( '<option value="' + val + '">' + val + '</option>' );

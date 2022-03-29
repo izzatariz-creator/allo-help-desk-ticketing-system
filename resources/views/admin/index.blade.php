@@ -97,7 +97,100 @@
 
                 {{-- Graf Pertama --}}
 
-                
+                <div class="col-xl-6 col-12">
+                    <div class="box">
+                        <div class="box-header">
+                            <h4 class="box-title">
+                                Earning Summary
+                            </h4>
+                        </div>
+                        <div class="box-body py-0">
+                            <div class="row">
+                                <div class="col-lg-6 col-12">
+                                    <div class="box no-shadow mb-0">
+                                        <div class="box-body px-0">
+                                            <div class="d-flex justify-content-start align-items-center">
+                                                <div>
+                                                    <div id="chart41"></div>
+                                                </div>
+                                                <div>
+                                                    <h5>Top Order</h5>
+                                                    <h4 class="text-dark my-0 font-weight-500">$39k</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-12">
+                                    <div class="box no-shadow mb-0">
+                                        <div class="box-body px-0">
+                                            <div class="d-flex justify-content-start align-items-center">
+                                                <div>
+                                                    <div id="chart42"></div>
+                                                </div>
+                                                <div>
+                                                    <h5>Average Order</h5>
+                                                    <h4 class="text-dark my-0 font-weight-500">$24k</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="charts_widget_43_chart"></div>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Graph Kedua --}}
+
+                <div class="col-xl-6 col-12">
+                    <div class="box bg-info bg-img" style="background-image: url({{ asset('backend/images/gallery/bg-1.png') }})">
+                        <div class="box-body text-center">
+                            <img src="{{ asset('backend/images/trophy.png') }}" class="mt-50" alt="" />
+                            <div class="max-w-500 mx-auto">
+                                <h2 class="text-white mb-20 font-weight-500">Best Employee Johen,</h2>
+                                <p class="text-white-50 mb-10 font-size-20">You've got 50.5% more sales today.
+                                    You've reached 8th milestone, checkout author section</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- Graph Ketiga --}}
+
+                    <div class="row">
+                        <div class="col-lg-6 col-12">
+                            <div class="box overflow-hidden">
+                                <div class="box-body pb-0">
+                                    <div>
+                                        <h2 class="text-dark mb-0 font-weight-500">18.8k</h2>
+                                        <p class="text-mute mb-0 font-size-20">Total users</p>
+                                    </div>
+                                </div>
+                                <div class="box-body p-0">
+                                    <div id="revenue1"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {{-- Graph Keempat --}}
+
+                        <div class="col-lg-6 col-12">
+                            <div class="box overflow-hidden">
+                                <div class="box-body pb-0">
+                                    <div>
+                                        <h2 class="text-dark mb-0 font-weight-500">35.8k</h2>
+                                        <p class="text-mute mb-0 font-size-20">Average reach per post</p>
+                                    </div>
+                                </div>
+                                <div class="box-body p-0">
+                                    <div id="revenue2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </section>

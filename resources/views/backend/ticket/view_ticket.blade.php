@@ -39,26 +39,27 @@
                                 <table id="example1" class="table table-bordered table-striped" style="width:100%">
                                     <thead>
                                         <tr>
-                                            <th width="2%">No</th>
-                                            <th width="5%">Ticket Reference</th>
-                                            <th width="10%">Ticket Submitter</th>
+                                            <th width="2%" class="text-center">No</th>
+                                            <th width="5%" class="text-center">Ticket Reference</th>
+                                            <th width="15%">Ticket Submitter</th>
                                             <th>Ticket Title</th>
-                                            <th width="15%">Category</th>
-                                            <th width="5%">Priority</th>
-                                            <th width="5%">Status</th>
-                                            <th width="10%">RSP</th>
+                                            <th width="10%" class="text-center">Category</th>
+                                            <th width="5%" class="text-center">Priority</th>
+                                            <th width="5%" class="text-center">Status</th>
+                                            <th width="10%" class="text-center">RSP</th>
+                                            <th width="10%" class="text-center">Date Created</th>
                                             <th width="14%">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($allData as $key => $ticket)
                                         <tr>
-                                            <td>{{ $key+1 }}</td>
-                                            <td>{{ $ticket->ticket_ref }}</td>
+                                            <td class="text-center">{{ $key+1 }}</td>
+                                            <td class="text-center">{{ $ticket->ticket_ref }}</td>
                                             <td>{{ $ticket['user']['name'] }}</td>
                                             <td>{{ $ticket->title }}</td>
-                                            <td>{{ $ticket['category']['name'] }}</td>
-                                            <td>
+                                            <td class="text-center">{{ $ticket['category']['name'] }}</td>
+                                            <td class="text-center">
                                                 @if ($ticket->priority=="Low")
                                                 <span class="badge rounded-pill bg-success">Low</span>
                                                 @else
@@ -74,7 +75,7 @@
                                                 @else
                                                 @endif
                                             </td>
-                                            <td>
+                                            <td class="text-center">
                                                 @if ($ticket->status=="Open")
                                                 <span class="badge bg-success">Open</span>
                                                 @else
@@ -96,11 +97,14 @@
                                                 @else
                                                 @endif
                                             </td>
-                                            <td>{{ $ticket['retail_service_provider']['name'] }}</td>
-                                            <td>
-                                                <a href="{{ route('ticket.view.detail',$ticket->id) }}" class="btn btn-success">View</a>
-                                                <a href="{{ route('ticket.edit',$ticket->id) }}" class="btn btn-info">Edit</a>
-                                                <a href="{{ route('ticket.delete',$ticket->id) }}" id="delete" class="btn btn-danger">Delete</a>
+                                            <td class="text-center">{{ $ticket['retail_service_provider']['name'] }}</td>
+                                            <td class="text-center">
+                                                {{ $ticket->created_at->format('d-m-Y H:i:s') }}
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="{{ route('ticket.view.detail',$ticket->id) }}" class="btn btn-success btn-block btn-small">View</a>
+                                                <a href="{{ route('ticket.edit',$ticket->id) }}" class="btn btn-info btn-block btn-small">Edit</a>
+                                                <a href="{{ route('ticket.delete',$ticket->id) }}" id="delete" class="btn btn-danger btn-block btn-small">Delete</a>
                                             </td>
                                         </tr>
                                         @endforeach

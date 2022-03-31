@@ -15,15 +15,19 @@
                         @php
                         $openticket = DB::table('tickets')->where('status',"Open");
                         @endphp
-                        <div class="box-body text-center">
-                            <div class="icon bg-success rounded w-60 h-60 mx-auto">
-                                <i class="text-light mr-0 font-size-24 mdi mdi-ticket-confirmation"></i>
+
+                        <a href="{{ route('ticket.view.open') }}">
+                            <div class="box-body text-center">
+                                <div class="icon bg-success rounded w-60 h-60 mx-auto">
+                                    <i class="text-light mr-0 font-size-24 mdi mdi-ticket-confirmation"></i>
+                                </div>
+                                <div>
+                                    <p class="text-mute mt-20 mb-0 font-size-16">Open Ticket(s)</p>
+                                    <h3 class="text-dark mb-0 font-weight-500">{{ $openticket->count() }}</h3>
+                                </div>
                             </div>
-                            <div>
-                                <p class="text-mute mt-20 mb-0 font-size-16">Open Ticket(s)</p>
-                                <h3 class="text-dark mb-0 font-weight-500">{{ $openticket->count() }}</h3>
-                            </div>
-                        </div>
+                        </a>
+
                     </div>
                 </div>
 
@@ -32,15 +36,18 @@
                         @php
                         $pendingticket = DB::table('tickets')->where('status',"Pending");
                         @endphp
-                        <div class="box-body text-center">
-                            <div class="icon bg-primary rounded w-60 h-60 mx-auto">
-                                <i class="text-light mr-0 font-size-24 mdi mdi-ticket-confirmation"></i>
+
+                        <a href="{{ route('ticket.view.pending') }}">
+                            <div class="box-body text-center">
+                                <div class="icon bg-primary rounded w-60 h-60 mx-auto">
+                                    <i class="text-light mr-0 font-size-24 mdi mdi-ticket-confirmation"></i>
+                                </div>
+                                <div>
+                                    <p class="text-mute mt-20 mb-0 font-size-16">Pending Ticket(s)</p>
+                                    <h3 class="text-dark mb-0 font-weight-500">{{ $pendingticket->count() }}</h3>
+                                </div>
                             </div>
-                            <div>
-                                <p class="text-mute mt-20 mb-0 font-size-16">Pending Ticket(s)</p>
-                                <h3 class="text-dark mb-0 font-weight-500">{{ $pendingticket->count() }}</h3>
-                            </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
 
@@ -49,15 +56,18 @@
                         @php
                         $onholdticket = DB::table('tickets')->where('status',"On Hold");
                         @endphp
-                        <div class="box-body text-center">
-                            <div class="icon bg-info rounded w-60 h-60 mx-auto">
-                                <i class="text-light mr-0 font-size-24 mdi mdi-ticket-confirmation"></i>
+
+                        <a href="{{ route('ticket.view.onhold') }}">
+                            <div class="box-body text-center">
+                                <div class="icon bg-info rounded w-60 h-60 mx-auto">
+                                    <i class="text-light mr-0 font-size-24 mdi mdi-ticket-confirmation"></i>
+                                </div>
+                                <div>
+                                    <p class="text-mute mt-20 mb-0 font-size-16">On Hold Ticket(s)</p>
+                                    <h3 class="text-dark mb-0 font-weight-500">{{ $onholdticket->count() }}</h3>
+                                </div>
                             </div>
-                            <div>
-                                <p class="text-mute mt-20 mb-0 font-size-16">On Hold Ticket(s)</p>
-                                <h3 class="text-dark mb-0 font-weight-500">{{ $onholdticket->count() }}</h3>
-                            </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
 
@@ -66,15 +76,19 @@
                         @php
                         $solvedticket = DB::table('tickets')->where('status',"Solved");
                         @endphp
-                        <div class="box-body text-center">
-                            <div class="icon bg-warning rounded w-60 h-60 mx-auto">
-                                <i class="text-dark mr-0 font-size-24 mdi mdi-ticket-confirmation"></i>
+
+                        <a href="{{ route('ticket.view.solved') }}">
+                            <div class="box-body text-center">
+                                <div class="icon bg-warning rounded w-60 h-60 mx-auto">
+                                    <i class="text-dark mr-0 font-size-24 mdi mdi-ticket-confirmation"></i>
+                                </div>
+                                <div>
+                                    <p class="text-mute mt-20 mb-0 font-size-16">Solved Ticket(s)</p>
+                                    <h3 class="text-dark mb-0 font-weight-500">{{ $solvedticket->count() }}</h3>
+                                </div>
                             </div>
-                            <div>
-                                <p class="text-mute mt-20 mb-0 font-size-16">Solved Ticket(s)</p>
-                                <h3 class="text-dark mb-0 font-weight-500">{{ $solvedticket->count() }}</h3>
-                            </div>
-                        </div>
+                        </a>
+
                     </div>
                 </div>
 
@@ -83,15 +97,19 @@
                         @php
                         $closedticket = DB::table('tickets')->where('status',"Closed");
                         @endphp
-                        <div class="box-body text-center">
-                            <div class="icon bg-danger rounded w-60 h-60 mx-auto">
-                                <i class="text-light mr-0 font-size-24 mdi mdi-ticket-confirmation"></i>
+
+                        <a href="{{ route('ticket.view.closed') }}">
+                            <div class="box-body text-center">
+                                <div class="icon bg-danger rounded w-60 h-60 mx-auto">
+                                    <i class="text-light mr-0 font-size-24 mdi mdi-ticket-confirmation"></i>
+                                </div>
+                                <div>
+                                    <p class="text-mute mt-20 mb-0 font-size-16">Closed Ticket(s)</p>
+                                    <h3 class="text-dark mb-0 font-weight-500">{{ $closedticket->count() }}</h3>
+                                </div>
                             </div>
-                            <div>
-                                <p class="text-mute mt-20 mb-0 font-size-16">Closed Ticket(s)</p>
-                                <h3 class="text-dark mb-0 font-weight-500">{{ $closedticket->count() }}</h3>
-                            </div>
-                        </div>
+                        </a>
+
                     </div>
                 </div>
 
@@ -146,7 +164,8 @@
                 {{-- Graph Kedua --}}
 
                 <div class="col-xl-6 col-12">
-                    <div class="box bg-info bg-img" style="background-image: url({{ asset('backend/images/gallery/bg-1.png') }})">
+                    <div class="box bg-info bg-img"
+                        style="background-image: url({{ asset('backend/images/gallery/bg-1.png') }})">
                         <div class="box-body text-center">
                             <img src="{{ asset('backend/images/trophy.png') }}" class="mt-50" alt="" />
                             <div class="max-w-500 mx-auto">

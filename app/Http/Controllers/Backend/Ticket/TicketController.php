@@ -24,6 +24,36 @@ class TicketController extends Controller
         return view('backend.ticket.view_ticket', $data);
     }
 
+    public function TicketViewOpen()
+    {
+        $data['allData'] = Ticket::select('ticket_ref','user_id','title','status','category_id','priority','rsp_id','created_at','id')->where('status','Open')->get();
+        return view('backend.ticket.view_ticket', $data);
+    }
+
+    public function TicketViewPending()
+    {
+        $data['allData'] = Ticket::select('ticket_ref','user_id','title','status','category_id','priority','rsp_id','created_at','id')->where('status','Pending')->get();
+        return view('backend.ticket.view_ticket', $data);
+    }
+
+    public function TicketViewOnHold()
+    {
+        $data['allData'] = Ticket::select('ticket_ref','user_id','title','status','category_id','priority','rsp_id','created_at','id')->where('status','On Hold')->get();
+        return view('backend.ticket.view_ticket', $data);
+    }
+
+    public function TicketViewSolved()
+    {
+        $data['allData'] = Ticket::select('ticket_ref','user_id','title','status','category_id','priority','rsp_id','created_at','id')->where('status','Solved')->get();
+        return view('backend.ticket.view_ticket', $data);
+    }
+
+    public function TicketViewClosed()
+    {
+        $data['allData'] = Ticket::select('ticket_ref','user_id','title','status','category_id','priority','rsp_id','created_at','id')->where('status','Closed')->get();
+        return view('backend.ticket.view_ticket', $data);
+    }
+
     public function TicketCreate()
     {
         $id = Auth::user()->id;

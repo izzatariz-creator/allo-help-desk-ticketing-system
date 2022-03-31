@@ -110,6 +110,11 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         // Start of Group for Ticket Management Routes
         Route::prefix('ticket')->group(function () {
             Route::get('view', [TicketController::class, 'TicketView'])->name('ticket.view');
+            Route::get('view/open', [TicketController::class, 'TicketViewOpen'])->name('ticket.view.open');
+            Route::get('view/pending', [TicketController::class, 'TicketViewPending'])->name('ticket.view.pending');
+            Route::get('view/onhold', [TicketController::class, 'TicketViewOnHold'])->name('ticket.view.onhold');
+            Route::get('view/solved', [TicketController::class, 'TicketViewSolved'])->name('ticket.view.solved');
+            Route::get('view/closed', [TicketController::class, 'TicketViewClosed'])->name('ticket.view.closed');
             Route::get('create', [TicketController::class, 'TicketCreate'])->name('ticket.create');
             Route::post('store', [TicketController::class, 'TicketStore'])->name('ticket.store');
             Route::get('edit/{id}', [TicketController::class, 'TicketEdit'])->name('ticket.edit');

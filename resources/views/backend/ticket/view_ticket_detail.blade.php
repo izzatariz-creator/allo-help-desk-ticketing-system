@@ -289,52 +289,58 @@
 
                                         </div> <!-- End Row -->
 
-                                    </form>
+                            </form>
 
-                                        <div class="text-xs-right" style="padding-top: 10px;">
-                                            <a href="{{ route('ticket.edit',$editData->id) }}"
-                                                class="btn btn-rounded btn-info mb-5">Edit</a>
-                                            <a href="{{ route('ticket.detail.pdf',$editData->id) }}"
-                                                class="btn btn-rounded btn-primary mb-5">PDF</a>
+                            <div class="text-xs-right" style="padding-top: 10px;">
+                                <a href="{{ route('ticket.edit',$editData->id) }}"
+                                    class="btn btn-rounded btn-info mb-5">Edit</a>
+                                <a href="{{ route('ticket.detail.pdf',$editData->id) }}"
+                                    class="btn btn-rounded btn-primary mb-5">PDF</a>
 
-                                            <!-- Button trigger modal -->
-                                            <button type="button" class="btn btn-rounded btn-danger mb-5" data-toggle="modal"
-                                                data-target="#exampleModalCenter">
-                                                Close Ticket
-                                            </button>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn btn-rounded btn-danger mb-5" data-toggle="modal"
+                                    data-target="#exampleModalCenter">
+                                    Close Ticket
+                                </button>
 
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
-                                                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                                                <div class="modal-dialog modal-dialog-centered" role="document">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLongTitle">Close Ticket</h5>
-                                                            <button type="button" class="close" data-dismiss="modal"
-                                                                aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                        </div>
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                                    aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLongTitle">Close Ticket</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
 
-                                                        <form method="POST" action="{{ route('ticket.close',$editData->id) }}">
-                                                            @csrf
-                                                        <div class="modal-body">
-                                                            <div class="box-body">
+                                            <form method="POST" action="{{ route('ticket.close',$editData->id) }}">
+                                                @csrf
+                                                <div class="modal-body">
+                                                    <div class="box-body">
+                                                        <div class="row">
+                                                            <div class="col">
+
                                                                 <div class="row">
-                                                                    <div class="col">
-                                
-                                                                            <div class="row">
-                                                                                <div class="col-12">
-                                            
-                                                                                    <div class="form-group">
-                                                                                        <h5>Closing Ticket Remarks <span class="text-danger">*</span></h5>
-                                                                                        <div class="controls">
-                                                                                            <textarea name="remark" class="form-control" required="" placeholder="Closing Ticket Remarks" aria-invalid="true" rows="5"></textarea>
-                                                                                            @error('remark')
-                                                                                            <span class="text-danger">{{ $message }}</span>
-                                                                                            @enderror
-                                                                                        </div>
-                                                                                    </div>
+                                                                    <div class="col-12">
+
+                                                                        <div class="form-group">
+                                                                            <h5>Closing Ticket Remarks <span
+                                                                                    class="text-danger">*</span></h5>
+                                                                            <div class="controls">
+                                                                                <textarea name="remark"
+                                                                                    class="form-control" required=""
+                                                                                    placeholder="Closing Ticket Remarks"
+                                                                                    aria-invalid="true"
+                                                                                    rows="5"></textarea>
+                                                                                @error('remark')
+                                                                                <span class="text-danger">{{ $message
+                                                                                    }}</span>
+                                                                                @enderror
+                                                                            </div>
+                                                                        </div>
 
                                                                     </div>
                                                                     <!-- /.col -->
@@ -345,17 +351,21 @@
                                                         </div>
 
                                                         <div class="modal-footer">
-                                                                <div class="text-xs-right">
-                                                                    <input type="submit" class="btn btn-rounded btn-danger mb-5" value="Close Ticket">
-                                                                    <button type="button" class="btn btn-rounded btn-info mb-5" data-dismiss="modal">Cancel</button>
-                                                                </div>
+                                                            <div class="text-xs-right">
+                                                                <input type="submit"
+                                                                    class="btn btn-rounded btn-danger mb-5"
+                                                                    value="Close Ticket">
+                                                                <button type="button"
+                                                                    class="btn btn-rounded btn-info mb-5"
+                                                                    data-dismiss="modal">Cancel</button>
+                                                            </div>
                                                         </div>
-                                                    </form>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            </form>
                                         </div>
-                            
+                                    </div>
+                                </div>
+                            </div>
+
 
                         </div>
                         <!-- /.col -->
@@ -363,6 +373,69 @@
                     <!-- /.row -->
                 </div>
                 <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+
+        </section>
+
+        <section class="content" style="padding-top: 10px">
+
+            <!-- Basic Forms -->
+            <div class="box">
+                <div class="box-header with-border">
+                    <h4 class="box-title">Comment</h4>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+
+                    <form method="post" action="{{ route('comments.store') }}">
+                        @csrf
+                        <div class="form-group publisher publisher-multi bg-white b-1 mb-30">
+                            <textarea class="form-control publisher-input auto-expand" name="body" rows="4"
+                                placeholder="Write Your Comment Here"></textarea>
+                            <input type="hidden" name="ticket_id" value="{{ $editData->id }}" />
+                            <div class="flexbox">
+                                <div class="gap-items">
+                                </div>
+                                <input type="submit" class="btn btn-sm btn-bold btn-primary" value="Add Comment" />
+                            </div>
+                        </div>
+                    </form>
+
+                    <hr style="width:100%;text-align:left;margin-left:0">
+                </div>
+                <!-- /.box-body -->
+
+                @foreach($comments as $comment)
+
+                <div class="box" style="border-right-style: solid;border-right-width: 0px;padding-right: 40px;padding-left: 40px;">
+                    <div class="media bb-1 border-fade">
+                        <img class="avatar avatar-lg" src="{{ (!empty($comment->user->image))? url('upload/user_images/'.$comment->user->image):url('upload/no_image.jpg') }} " alt="User Avatar">
+                        <div class="media-body">
+                            <p>
+                                <strong><p>{{ $comment->user->name }}</p></strong>
+                                <time class="float-right text-fade" datetime="2017">{{ $comment->created_at->diffForHumans() }}</time>
+                            </p>
+                            @php
+                                $role = $comment->user->roles->first()->name;
+                            @endphp
+                            <p><small>{{ $role }}</small></p>
+                        </div>
+                    </div>
+
+                    <div class="box-body bb-1 border-fade">
+                        <p class="lead">{{ $comment->body }}</p>
+                        </div>
+                    </div>
+
+                    @endforeach
+
+                </div>
+
+            
+                    
+                    
+                
             </div>
             <!-- /.box -->
 

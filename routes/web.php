@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Backend\Comment\CommentController;
 use App\Http\Controllers\Backend\Permission\PermissionController;
 use App\Http\Controllers\Backend\Role\RoleController;
 use App\Http\Controllers\Backend\Setup\ModemController;
@@ -117,6 +118,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
             Route::get('view/detail/{id}', [TicketController::class, 'TicketViewDetail'])->name('ticket.view.detail');
             Route::get('ticket/detail/{id}', [TicketController::class, 'TicketDetailsPDF'])->name('ticket.detail.pdf');
             Route::post('close/{id}', [TicketController::class, 'TicketClose'])->name('ticket.close');
+            Route::post('comments', [CommentController::class, 'store'])->name('comments.store');
         });
         // End of Group for Ticket Management Routes
 

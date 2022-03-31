@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend\Ticket;
 
 use App\Http\Controllers\Controller;
+use App\Models\Comment;
 use App\Models\Modem;
 use App\Models\RetailServiceProvider;
 use App\Models\Router;
@@ -156,7 +157,7 @@ class TicketController extends Controller
 
     }
 
-    public function TicketViewDetail($id)
+    public function TicketViewDetail($id, Ticket $ticket)
     {
         $data['editData'] = Ticket::find($id);
 
@@ -167,6 +168,8 @@ class TicketController extends Controller
         $data['rspData'] = RetailServiceProvider::orderBy('name', 'asc')->get();
         $data['modemData'] = Modem::orderBy('name', 'asc')->get();
         $data['routerData'] = Router::orderBy('name', 'asc')->get();
+
+        $data['comments'] = Comment::where('ticket_id', $id)->orderBy('created_at','DESC')->get();
 
         return view('backend.ticket.view_ticket_detail', $data);
     }

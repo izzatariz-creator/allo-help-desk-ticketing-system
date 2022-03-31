@@ -48,4 +48,9 @@ class Ticket extends Model
     public function technician(){
         return $this->belongsTo(User::class, 'technician_id','id');
     }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class)->whereNull('parent_id');
+    }
 }

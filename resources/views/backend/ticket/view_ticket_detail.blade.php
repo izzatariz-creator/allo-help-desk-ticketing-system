@@ -292,16 +292,20 @@
                             </form>
 
                             <div class="text-xs-right" style="padding-top: 10px;">
+                                @can('edit ticket')
                                 <a href="{{ route('ticket.edit',$editData->id) }}"
                                     class="btn btn-rounded btn-info mb-5">Edit</a>
+                                @endcan
                                 <a href="{{ route('ticket.detail.pdf',$editData->id) }}"
                                     class="btn btn-rounded btn-primary mb-5">PDF</a>
 
                                 <!-- Button trigger modal -->
+                                @can('close ticket')
                                 <button type="button" class="btn btn-rounded btn-danger mb-5" data-toggle="modal"
                                     data-target="#exampleModalCenter">
                                     Close Ticket
                                 </button>
+                                @endcan
 
                                 <!-- Modal -->
                                 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"

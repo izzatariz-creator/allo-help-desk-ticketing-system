@@ -33,6 +33,12 @@ class TicketController extends Controller
         return view('backend.ticket.view_ticket', $data);
     }
 
+    public function TicketViewAssigned()
+    {
+        $data['allData'] = Ticket::where('technician_id',Auth::user()->id)->get();
+        return view('backend.ticket.assigned_ticket', $data);
+    }
+
     public function TicketViewOpen()
     {
         $data['allData'] = Ticket::select('ticket_ref','user_id','title','status','category_id','priority','rsp_id','created_at','id')->where('status','Open')->get();

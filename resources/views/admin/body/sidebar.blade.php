@@ -177,6 +177,9 @@ else{
                 </a>
                 <ul class="treeview-menu">
                     <li class="{{ ($route == 'ticket.view')?'active':'' }}"><a href="{{ route('ticket.view') }}"><i class="ti-more"></i>View Ticket</a></li>
+                    @can('view assigned ticket')
+                    <li class="{{ ($route == 'ticket.view.assigned')?'active':'' }}"><a href="{{ route('ticket.view.assigned') }}"><i class="ti-more"></i>View Assigned Ticket</a></li>
+                    @endcan
                     <li class="{{ ($route == 'ticket.create')?'active':'' }}"><a href="{{ route('ticket.create') }}"><i class="ti-more"></i>Create Ticket</a></li>
                 </ul>
             </li>

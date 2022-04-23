@@ -110,6 +110,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         // Start of Group for Ticket Management Routes
         Route::prefix('ticket')->group(function () {
             Route::get('view', [TicketController::class, 'TicketView'])->name('ticket.view');
+            Route::get('view/assigned', [TicketController::class, 'TicketViewAssigned'])->name('ticket.view.assigned');
             Route::get('view/open', [TicketController::class, 'TicketViewOpen'])->name('ticket.view.open');
             Route::get('view/pending', [TicketController::class, 'TicketViewPending'])->name('ticket.view.pending');
             Route::get('view/onhold', [TicketController::class, 'TicketViewOnHold'])->name('ticket.view.onhold');

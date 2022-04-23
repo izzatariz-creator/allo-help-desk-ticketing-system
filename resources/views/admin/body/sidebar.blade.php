@@ -1,6 +1,17 @@
 @php
 $prefix = Request::route()->getPrefix();
 $route = Route::current()->getName();
+
+if(Auth::user()->hasRole('admin')){
+    $linkuser = "dashboard";
+}
+else if(Auth::user()->hasRole('technician')){
+    $linkuser = "dashboard";
+}
+else{
+    $linkuser = "ticket.view";
+}
+
 @endphp
 
 <aside class="main-sidebar">
@@ -9,7 +20,8 @@ $route = Route::current()->getName();
 
         <div class="user-profile">
             <div class="ulogo">
-                <a href="{{ route('dashboard') }}">
+
+                <a href= {{ route($linkuser) }}>
                     <!-- logo for regular state and mobile devices -->
                     <div class="d-flex align-items-center justify-content-center">
                         <img src="{{ asset('backend/images/allo-tnb.png') }}" alt="" style="width:35px;height:35px;">
@@ -22,12 +34,18 @@ $route = Route::current()->getName();
         <!-- sidebar menu-->
         <ul class="sidebar-menu" data-widget="tree">
 
+            @hasanyrole('technician|admin')
+
             <li class="{{ ($route == 'dashboard')?'active':'' }}">
                 <a href="{{ route('dashboard') }}">
                     <i data-feather="home"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
+
+            @endhasanyrole
+
+            @role('admin')
 
             <hr>
 
@@ -61,6 +79,8 @@ $route = Route::current()->getName();
                 </ul>
             </li>
 
+            @endrole
+
             <hr>
 
             <li class="header nav-small-cap">General Pages</li>
@@ -79,6 +99,8 @@ $route = Route::current()->getName();
                     <li class="{{ ($route == 'equipment.edit')?'active':'' }}"><a href="{{ route('equipment.edit') }}"><i class="ti-more"></i>Edit Equipment</a></li>
                 </ul>
             </li>
+
+            @hasanyrole('technician|admin')
 
             <hr>
 
@@ -139,6 +161,8 @@ $route = Route::current()->getName();
                     <li class="{{ ($route == 'ticket.category.add')?'active':'' }}"><a href="{{ route('ticket.category.add') }}"><i class="ti-more"></i>Add Ticket Category</a></li>
                 </ul>
             </li>
+
+            @endhasanyrole
 
             <hr>
             <li class="header nav-small-cap">Ticket Management</li>

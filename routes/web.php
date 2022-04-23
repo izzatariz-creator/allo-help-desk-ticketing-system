@@ -41,7 +41,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
     Route::group(['middleware' => 'auth'], function () {
 
         // Start of Group for User Management Routes
-        Route::prefix('user')->group(function () {
+        Route::prefix('user')->middleware('role:admin')->group(function () {
             Route::get('/view', [UserController::class, 'UserView'])->name('user.view');
             Route::get('/add', [UserController::class, 'UserAdd'])->name('user.add');
             Route::post('/store', [UserController::class, 'UserStore'])->name('user.store');
@@ -64,7 +64,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         // End of Group for Profile Management Routes
 
         // Start of Group for Retail Service Provider Management Routes
-        Route::prefix('rsp')->group(function () {
+        Route::prefix('rsp')->middleware('role:admin|technician')->group(function () {
             Route::get('view', [RetailServiceProviderController::class, 'RetailServiceProviderView'])->name('rsp.view');
             Route::get('add', [RetailServiceProviderController::class, 'RetailServiceProviderAdd'])->name('rsp.add');
             Route::post('store', [RetailServiceProviderController::class, 'RetailServiceProviderStore'])->name('rsp.store');
@@ -75,7 +75,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         // End of Group for Retail Service Provider Management Routes
 
         // Start of Group for Modem Management Routes
-        Route::prefix('modem')->group(function () {
+        Route::prefix('modem')->middleware('role:admin|technician')->group(function () {
             Route::get('view', [ModemController::class, 'ModemView'])->name('modem.view');
             Route::get('add', [ModemController::class, 'ModemAdd'])->name('modem.add');
             Route::post('store', [ModemController::class, 'ModemStore'])->name('modem.store');
@@ -86,7 +86,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         // End of Group for Modem Management Routes
 
         // Start of Group for Router Management Routes
-        Route::prefix('router')->group(function () {
+        Route::prefix('router')->middleware('role:admin|technician')->group(function () {
             Route::get('view', [RouterController::class, 'RouterView'])->name('router.view');
             Route::get('add', [RouterController::class, 'RouterAdd'])->name('router.add');
             Route::post('store', [RouterController::class, 'RouterStore'])->name('router.store');
@@ -97,7 +97,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         // End of Group for Router Management Routes
 
         // Start of Group for Ticket Category Management Routes
-        Route::prefix('ticket/category')->group(function () {
+        Route::prefix('ticket/category')->middleware('role:admin|technician')->group(function () {
             Route::get('view', [TicketCategoryController::class, 'TicketCategoryView'])->name('ticket.category.view');
             Route::get('add', [TicketCategoryController::class, 'TicketCategoryAdd'])->name('ticket.category.add');
             Route::post('store', [TicketCategoryController::class, 'TicketCategoryStore'])->name('ticket.category.store');
@@ -128,7 +128,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         // End of Group for Ticket Management Routes
 
         // Start of Group for Role Management Routes
-        Route::prefix('role')->group(function () {
+        Route::prefix('role')->middleware('role:admin')->group(function () {
             Route::get('view', [RoleController::class, 'RoleView'])->name('role.view');
             Route::get('add', [RoleController::class, 'RoleAdd'])->name('role.add');
             Route::post('store', [RoleController::class, 'RoleStore'])->name('role.store');
@@ -141,7 +141,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         // End of Group for Role Management Routes
 
         // Start of Group for Permission Management Routes
-        Route::prefix('permission')->group(function () {
+        Route::prefix('permission')->middleware('role:admin')->group(function () {
             Route::get('view', [PermissionController::class, 'PermissionView'])->name('permission.view');
             Route::get('add', [PermissionController::class, 'PermissionAdd'])->name('permission.add');
             Route::post('store', [PermissionController::class, 'PermissionStore'])->name('permission.store');

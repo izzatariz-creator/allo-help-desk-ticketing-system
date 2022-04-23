@@ -10,6 +10,8 @@
 
                 <!-- Ticket Counter -->
 
+                @hasanyrole('technician|admin')
+
                 <div class="col-xl-2 col-6">
                     <div class="box overflow-hidden pull-up hov-rs">
                         @php
@@ -112,6 +114,8 @@
 
                     </div>
                 </div>
+
+                @endhasanyrole
 
                 {{-- Graf Pertama --}}
 

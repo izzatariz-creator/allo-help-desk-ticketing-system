@@ -1,3 +1,16 @@
+@php
+if(Auth::user()->hasRole('admin')){
+    $linkuser = "dashboard";
+}
+else if(Auth::user()->hasRole('technician')){
+    $linkuser = "dashboard";
+}
+else{
+    $linkuser = "ticket.view";
+}
+
+@endphp
+
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
 <!-- BEGIN: Head-->
@@ -48,7 +61,7 @@
             </div>
             <div class="content-body">
                 <!-- Not authorized-->
-                <div class="misc-wrapper"><a class="brand-logo" href="{{ route('login') }}">
+                <div class="misc-wrapper"><a class="brand-logo" href="{{ route($linkuser) }}">
                         <img src="{{ asset('backend/images/allo-tnb.png') }}" alt="" style="width:35px;height:35px;">
                         <h2 class="brand-text text-primary ms-1">Allo HDTS</h2>
                     </a>
@@ -57,7 +70,7 @@
                             <h2 class="mb-1">You are not authorized! 🔐</h2>
                             <p class="mb-2">
                                 Sorry, you are not authorised to access this page!
-                            </p><a class="btn btn-primary mb-1 btn-sm-block" href="{{ route('login') }}">Back to login</a><img class="img-fluid" src="{{ asset('app-assets/images/pages/not-authorized.svg') }}" alt="Not authorized page" />
+                            </p><a class="btn btn-primary mb-1 btn-sm-block" href="{{ route($linkuser) }}">Back to home</a><img class="img-fluid" src="{{ asset('app-assets/images/pages/not-authorized.svg') }}" alt="Not authorized page" />
                         </div>
                     </div>
                 </div>

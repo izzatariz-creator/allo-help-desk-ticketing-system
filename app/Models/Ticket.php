@@ -23,6 +23,8 @@ class Ticket extends Model
         'router_id',
         'technician_id',
         'date_closed',
+        'created_at',
+        'updated_at',
     ];
 
     public function retail_service_provider(){

@@ -115,7 +115,7 @@
 
                 {{-- Graf Pertama --}}
 
-                <div class="col-xl-6 col-12">
+                {{-- <div class="col-xl-6 col-12">
                     <div class="box">
                         <div class="box-header">
                             <h4 class="box-title">
@@ -159,11 +159,12 @@
                             <div id="charts_widget_43_chart"></div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
+                
 
                 {{-- Graph Kedua --}}
 
-                <div class="col-xl-6 col-12">
+                {{-- <div class="col-xl-6 col-12">
                     <div class="box bg-info bg-img"
                         style="background-image: url({{ asset('backend/images/gallery/bg-1.png') }})">
                         <div class="box-body text-center">
@@ -174,11 +175,12 @@
                                     You've reached 8th milestone, checkout author section</p>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
 
+            
                     {{-- Graph Ketiga --}}
 
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-lg-6 col-12">
                             <div class="box overflow-hidden">
                                 <div class="box-body pb-0">
@@ -191,11 +193,11 @@
                                     <div id="revenue1"></div>
                                 </div>
                             </div>
-                        </div>
-
+                        </div> --}}
+                        
                         {{-- Graph Keempat --}}
 
-                        <div class="col-lg-6 col-12">
+                        {{-- <div class="col-lg-6 col-12">
                             <div class="box overflow-hidden">
                                 <div class="box-body pb-0">
                                     <div>
@@ -207,7 +209,7 @@
                                     <div id="revenue2"></div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
 

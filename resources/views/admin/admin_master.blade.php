@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{{ asset('backend/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('backend/css/skin_color.css') }}">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/searchpanes/2.0.0/css/searchPanes.dataTables.min.css">
 
 </head>
 
@@ -57,6 +58,7 @@
     {{-- DataTable JS --}}
     <script src="{{asset('../assets/vendor_components/datatable/datatables.min.js')}}"></script>
     <script src="{{asset('backend/js/pages/data-table.js')}}"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/searchpanes/2.0.0/js/dataTables.searchPanes.min.js"></script>
 
     <!-- Sunny Admin App -->
     <script src="{{ asset('backend/js/template.js') }}"></script>
@@ -119,6 +121,12 @@
         });
         });  
     </script>
+
+<script type="text/javascript">
+    $('#myTable').DataTable( {
+    dom: 'Pfrtip'
+} );
+</script>
 
 </body>
 

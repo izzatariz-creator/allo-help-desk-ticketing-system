@@ -36,10 +36,9 @@
                         <!-- /.box-header -->
                         <div class="box-body">
                             <div class="table-responsive">
-                                <table id="example1" class="table table-bordered table-striped" style="width:100%">
+                                <table id="myTable" class="table table-bordered table-striped" style="width:100%">
                                     <thead>
                                         <tr>
-                                            <th width="2%" class="text-center">No</th>
                                             <th width="5%" class="text-center">Ticket Reference</th>
                                             <th width="15%">Ticket Submitter</th>
                                             <th>Ticket Title</th>
@@ -48,13 +47,13 @@
                                             <th width="5%" class="text-center">Status</th>
                                             <th width="10%" class="text-center">RSP</th>
                                             <th width="10%" class="text-center">Date Created</th>
-                                            <th width="14%">Actions</th>
+                                            <th width="8%">Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($allData as $key => $ticket)
                                         <tr>
-                                            <td class="text-center">{{ $key+1 }}</td>
+                                            {{-- <td class="text-center">{{ $key+1 }}</td> --}}
                                             <td class="text-center">{{ $ticket->ticket_ref }}</td>
                                             <td>{{ $ticket['user']['name'] }}</td>
                                             <td>{{ $ticket->title }}</td>

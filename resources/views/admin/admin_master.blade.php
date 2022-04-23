@@ -124,6 +124,9 @@
 
 <script type="text/javascript">
     $('#myTable').DataTable( {
+        searchPanes: {
+            viewTotal: true
+        },
     dom: 'Pfrtip'
 } );
 </script>

@@ -20,7 +20,16 @@ class TicketController extends Controller
 {
     public function TicketView()
     {
-        $data['allData'] = Ticket::orderBy('created_at', 'DESC')->get();
+        if(Auth::user()->hasRole('admin')){
+            $data['allData'] = Ticket::select('ticket_ref','user_id','title','status','category_id','priority','rsp_id','created_at','id')->get();
+        }
+        else if(Auth::user()->hasRole('technician')){
+            $data['allData'] = Ticket::select('ticket_ref','user_id','title','status','category_id','priority','rsp_id','created_at','id')->get();
+        }
+        else{
+            $data['allData'] = Ticket::where('user_id',Auth::user()->id)->get();
+        }
+
         return view('backend.ticket.view_ticket', $data);
     }
 

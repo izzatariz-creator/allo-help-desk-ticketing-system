@@ -124,10 +124,19 @@
 
 <script type="text/javascript">
     $('#myTable').DataTable( {
+        "order": [[ 7, "desc" ]],
         searchPanes: {
             viewTotal: true
         },
-    dom: 'Pfrtip'
+    dom: 'Pfrtip',
+    columnDefs: [
+            {
+                searchPanes: {
+                    show: true
+                },
+                targets: [3,4,5,6]
+            },
+        ]
 } );
 </script>
 

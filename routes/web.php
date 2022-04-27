@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Backend\Comment\CommentController;
 use App\Http\Controllers\Backend\Permission\PermissionController;
+use App\Http\Controllers\Backend\Report\ReportController;
 use App\Http\Controllers\Backend\Role\RoleController;
 use App\Http\Controllers\Backend\Setup\ModemController;
 use App\Http\Controllers\Backend\Setup\RetailServiceProviderController;
@@ -151,6 +152,15 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
             Route::get('delete/{id}', [PermissionController::class, 'PermissionDelete'])->name('permission.delete');
         });
         // End of Group for Permission Management Routes
+
+        // Start of Group for Report Management Routes
+        Route::prefix('report')->group(function () {
+            Route::get('view', [ReportController::class, 'ReportView'])->name('report.view');
+            Route::post('by/date', [ReportController::class, 'ReportByDate'])->name('by.date');
+            Route::post('by/month', [ReportController::class, 'ReportByMonth'])->name('by.month');
+            Route::post('by/year', [ReportController::class, 'ReportByYear'])->name('by.year');
+        });
+        // End of Group for Report Management Routes
 
     }); //End Of Auth Middleware Group
 

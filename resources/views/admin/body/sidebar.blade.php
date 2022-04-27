@@ -184,6 +184,22 @@ else{
                 </ul>
             </li>
 
+            <hr>
+            <li class="header nav-small-cap">Report Management</li>
+
+            <li class="treeview {{ ($prefix == '/report')?'active':'' }}">
+                <a href="#">
+                    <i data-feather="clipboard"></i>
+                    <span>Report Generation</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-right pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{ ($route == 'report.view')?'active':'' }}"><a href="{{ route('report.view') }}"><i class="ti-more"></i>Generate Report</a></li>
+                </ul>
+            </li>
+
         </ul>
     </section>
 

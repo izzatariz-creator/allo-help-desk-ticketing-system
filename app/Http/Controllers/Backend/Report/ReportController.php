@@ -69,11 +69,98 @@ class ReportController extends Controller
 
     public function ReportByMonth(Request $request)
     {
-        return $request->all();
+        
+        $month_selected = $request->month;
+        $year_selected = $request->year;
+
+        $data['month'] = $month_selected;
+        $data['year'] = $year_selected;
+
+        $data['new_registered_user'] = User::whereYear('created_at', '=', $year_selected)->whereMonth('created_at', '=', $month_selected)->count();
+
+        $data['ticket_created'] = Ticket::whereYear('created_at', '=', $year_selected)->whereMonth('created_at', '=', $month_selected)->count();
+        $data['ticket_closed'] = Ticket::whereYear('date_closed', '=', $year_selected)->whereMonth('date_closed', '=', $month_selected)->count();
+
+        $data['categories'] = TicketCategory::withCount([
+            'tickets' => function ($query) use ($month_selected,$year_selected) {
+                $query->whereYear('created_at', '=', $year_selected)->whereMonth('created_at', '=', $month_selected);
+            }
+        ])->get();
+
+        $data['rsps'] = RetailServiceProvider::withCount([
+            'tickets' => function ($query) use ($month_selected,$year_selected) {
+                $query->whereYear('created_at', '=', $year_selected)->whereMonth('created_at', '=', $month_selected);
+            }
+        ])->get();
+
+        $data['modems'] = Modem::withCount([
+            'tickets' => function ($query) use ($month_selected,$year_selected) {
+                $query->whereYear('created_at', '=', $year_selected)->whereMonth('created_at', '=', $month_selected);
+            }
+        ])->get();
+
+        $data['routers'] = Router::withCount([
+            'tickets' => function ($query) use ($month_selected,$year_selected) {
+                $query->whereYear('created_at', '=', $year_selected)->whereMonth('created_at', '=', $month_selected);
+            }
+        ])->get();
+
+        $data['users'] = User::role('technician')->withCount([
+            'tickets' => function ($query) use ($month_selected,$year_selected) {
+                $query->whereYear('created_at', '=', $year_selected)->whereMonth('created_at', '=', $month_selected);
+            }
+        ])->get();
+
+        $pdf = PDF::loadView('backend.report.report_by_month_year_pdf', $data);
+        return $pdf->stream('ByMonthYearReport-allo.pdf');
     }
 
     public function ReportByYear(Request $request)
     {
-        return $request->all();
+
+        $year_selected = $request->year;
+
+        $data['year'] = $year_selected;
+
+        $data['new_registered_user'] = User::whereYear('created_at', '=', $year_selected)->count();
+
+        $data['ticket_created'] = Ticket::whereYear('created_at', '=', $year_selected)->count();
+        $data['ticket_closed'] = Ticket::whereYear('date_closed', '=', $year_selected)->count();
+
+        $data['categories'] = TicketCategory::withCount([
+            'tickets' => function ($query) use ($year_selected) {
+                $query->whereYear('created_at', '=', $year_selected);
+            }
+        ])->get();
+
+        $data['rsps'] = RetailServiceProvider::withCount([
+            'tickets' => function ($query) use ($year_selected) {
+                $query->whereYear('created_at', '=', $year_selected);
+            }
+        ])->get();
+
+        $data['modems'] = Modem::withCount([
+            'tickets' => function ($query) use ($year_selected) {
+                $query->whereYear('created_at', '=', $year_selected);
+            }
+        ])->get();
+
+        $data['routers'] = Router::withCount([
+            'tickets' => function ($query) use ($year_selected) {
+                $query->whereYear('created_at', '=', $year_selected);
+            }
+        ])->get();
+
+        $data['users'] = User::role('technician')->withCount([
+            'tickets' => function ($query) use ($year_selected) {
+                $query->whereYear('created_at', '=', $year_selected);
+            }
+        ])->get();
+
+        $pdf = PDF::loadView('backend.report.report_by_year_pdf', $data);
+        return $pdf->stream('ByYearReport-allo.pdf');
+
+        //$test = Ticket::whereYear('created_at', '=', $year_selected)->whereMonth('created_at', '=', $month_selected)->get();
+        //return $test->all();
     }
 }

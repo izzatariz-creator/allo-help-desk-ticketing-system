@@ -64,25 +64,25 @@
 
                         <div class="box-body">
                             <div class="table-responsive">
-                                <form action="{{ route('by.date') }}" method="post">
+                                <form action="{{ route('by.month') }}" method="post">
                                     @csrf
                                     <div class="form-group">
                                         <h5>Select Month <span class="text-danger">*</span></h5>
                                         <div class="controls">
                                             <select name="month" class="form-control">
                                                 <option value="" disabled hidden selected>Select Month</option>
-                                                <option value="January">January</option>
-                                                <option value="February">February</option>
-                                                <option value="March">March</option>
-                                                <option value="April">April</option>
-                                                <option value="May">May</option>
-                                                <option value="Jun">Jun</option>
-                                                <option value="July">July</option>
-                                                <option value="August">August</option>
-                                                <option value="September">September</option>
-                                                <option value="October">October</option>
-                                                <option value="November">November</option>
-                                                <option value="December">December</option>
+                                                <option value="1">January</option>
+                                                <option value="2">February</option>
+                                                <option value="3">March</option>
+                                                <option value="4">April</option>
+                                                <option value="5">May</option>
+                                                <option value="6">Jun</option>
+                                                <option value="7">July</option>
+                                                <option value="8">August</option>
+                                                <option value="9">September</option>
+                                                <option value="10">October</option>
+                                                <option value="11">November</option>
+                                                <option value="12">December</option>
                                             </select>
                                             @error('month')
                                             <span class="text-danger">{{ $message }}</span>

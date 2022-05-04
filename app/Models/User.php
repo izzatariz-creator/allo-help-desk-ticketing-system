@@ -78,4 +78,9 @@ class User extends Authenticatable
     public function router(){
         return $this->belongsTo(Router::class, 'router_id','id');
     }
+
+    public function tickets()
+    {
+        return $this->hasMany(Ticket::class, 'technician_id','id');
+    }
 }

@@ -12,4 +12,9 @@ class RetailServiceProvider extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function tickets()
+    {
+        return $this->hasMany(Ticket::class, 'rsp_id','id');
+    }
 }

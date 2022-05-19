@@ -205,6 +205,7 @@
                                             </div> <!-- End Col Md-6 -->
 
 
+                                        @can('assign technician')
                                         <div class="col-md-6">
 
                                             <div class="form-group">
@@ -220,6 +221,7 @@
                                                 </div>
                                             </div>
                                         </div> <!-- End Col Md-6 -->
+                                        @endcan
 
                                     </div> <!-- End Row -->
 

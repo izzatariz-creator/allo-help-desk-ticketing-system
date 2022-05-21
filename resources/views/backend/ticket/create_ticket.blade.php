@@ -169,7 +169,7 @@
                                                 <div class="form-group">
                                                     <h5>Address <span class="text-danger">*</span></h5>
                                                     <div class="controls">
-                                                        <input type="text" name="address" class="form-control" required="" value="{{ $editData->address }}"">
+                                                        <input type="text" name="address" class="form-control" placeholder="Installation Address" required="" value="{{ $editData->address }}"">
                                                         @error('address')
                                                         <span class="text-danger">{{ $message }}</span>
                                                         @enderror

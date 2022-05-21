@@ -12,6 +12,8 @@ use App\Http\Controllers\Backend\Setup\TicketCategoryController;
 use App\Http\Controllers\Backend\Ticket\TicketController;
 use App\Http\Controllers\Backend\User\ProfileController;
 use App\Http\Controllers\Backend\User\UserController;
+use App\Mail\NewTicketMail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -161,6 +163,14 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
             Route::post('by/year', [ReportController::class, 'ReportByYear'])->name('by.year');
         });
         // End of Group for Report Management Routes
+
+        //Routes For Mail Testing
+        // Route::get('/email', function (){
+        //     $name = 'izzat';
+        //     Mail::to('info@allo.com')->send(new NewTicketMail($name));
+        //     return new NewTicketMail($name);
+        // });
+        // End of Group For Mail Testing
 
     }); //End Of Auth Middleware Group
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend\Ticket;
 
 use App\Http\Controllers\Controller;
+use App\Mail\NewTicketMail;
 use App\Models\Comment;
 use App\Models\Modem;
 use App\Models\RetailServiceProvider;
@@ -15,6 +16,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Mail;
 
 class TicketController extends Controller
 {
@@ -136,6 +138,14 @@ class TicketController extends Controller
             $ticket->rsp_id = $request->rsp_id;
             $ticket->modem_id = $request->modem_id;
             $ticket->router_id = $request->router_id;
+
+            $data = array(
+                'ticket_user' => Auth::user()->name,
+                'ticket_title' => $request->title,
+                'ticket_desc' => $request->description,
+            );
+
+            Mail::to('info@allo.com')->send(new NewTicketMail($data));
 
             $ticket->save();
         });

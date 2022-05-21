@@ -154,7 +154,7 @@ Route::group(['middleware' => 'prevent-back-history'],function(){
         // End of Group for Permission Management Routes
 
         // Start of Group for Report Management Routes
-        Route::prefix('report')->group(function () {
+        Route::prefix('report')->middleware('role:admin|technician')->group(function () {
             Route::get('view', [ReportController::class, 'ReportView'])->name('report.view');
             Route::post('by/date', [ReportController::class, 'ReportByDate'])->name('by.date');
             Route::post('by/month', [ReportController::class, 'ReportByMonth'])->name('by.month');

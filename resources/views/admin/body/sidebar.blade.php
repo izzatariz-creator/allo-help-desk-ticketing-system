@@ -185,6 +185,8 @@ else{
             </li>
 
             <hr>
+
+            @hasanyrole('technician|admin')
             <li class="header nav-small-cap">Report Management</li>
 
             <li class="treeview {{ ($prefix == '/report')?'active':'' }}">
@@ -199,6 +201,8 @@ else{
                     <li class="{{ ($route == 'report.view')?'active':'' }}"><a href="{{ route('report.view') }}"><i class="ti-more"></i>Generate Report</a></li>
                 </ul>
             </li>
+
+            @endhasanyrole
 
         </ul>
     </section>

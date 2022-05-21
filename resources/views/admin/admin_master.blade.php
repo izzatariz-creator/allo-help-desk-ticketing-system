@@ -124,7 +124,7 @@
 
 <script type="text/javascript">
     $('#myTable').DataTable( {
-        "order": [[ 7, "desc" ]],
+        "order": [[ 0, "desc" ]],
     dom: 'Pfrtip',
     columnDefs: [
             {

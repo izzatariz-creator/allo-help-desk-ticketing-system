@@ -105,10 +105,6 @@
                                             <td class="text-center">
                                                 <a href="{{ route('ticket.view.detail',$ticket->id) }}"
                                                     class="btn btn-success btn-block btn-small">View</a>
-                                                <a href="{{ route('ticket.edit',$ticket->id) }}"
-                                                    class="btn btn-info btn-block btn-small">Edit</a>
-                                                <a href="{{ route('ticket.delete',$ticket->id) }}" id="delete"
-                                                    class="btn btn-danger btn-block btn-small">Delete</a>
                                             </td>
                                         </tr>
                                         @endforeach

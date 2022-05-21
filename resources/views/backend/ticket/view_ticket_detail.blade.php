@@ -292,19 +292,35 @@
                             </form>
 
                             <div class="text-xs-right" style="padding-top: 10px;">
+
+                                @can('edit ticket user')
+                                @if ($editData->status!="Closed")
+                                @if ($editData->technician_id===NULL)
+                                <a href="{{ route('ticket.edit',$editData->id) }}"
+                                    class="btn btn-rounded btn-info mb-5">Edit</a>
+                                @endif
+                                @endif
+                                @endcan
+
                                 @can('edit ticket')
                                 <a href="{{ route('ticket.edit',$editData->id) }}"
                                     class="btn btn-rounded btn-info mb-5">Edit</a>
                                 @endcan
+
                                 <a href="{{ route('ticket.detail.pdf',$editData->id) }}"
                                     class="btn btn-rounded btn-primary mb-5">PDF</a>
 
                                 <!-- Button trigger modal -->
                                 @can('close ticket')
-                                <button type="button" class="btn btn-rounded btn-danger mb-5" data-toggle="modal"
+                                <button type="button" class="btn btn-rounded btn-success mb-5" data-toggle="modal"
                                     data-target="#exampleModalCenter">
                                     Close Ticket
                                 </button>
+                                @endcan
+
+                                @can('delete ticket')
+                                <a href="{{ route('ticket.delete',$editData->id) }}" id="delete"
+                                    class="btn btn-rounded btn-danger mb-5">Delete</a>
                                 @endcan
 
                                 <!-- Modal -->
@@ -357,7 +373,7 @@
                                                         <div class="modal-footer">
                                                             <div class="text-xs-right">
                                                                 <input type="submit"
-                                                                    class="btn btn-rounded btn-danger mb-5"
+                                                                    class="btn btn-rounded btn-success mb-5"
                                                                     value="Close Ticket">
                                                                 <button type="button"
                                                                     class="btn btn-rounded btn-info mb-5"
@@ -412,16 +428,22 @@
 
                 @foreach($comments as $comment)
 
-                <div class="box" style="border-right-style: solid;border-right-width: 0px;padding-right: 40px;padding-left: 40px;">
+                <div class="box"
+                    style="border-right-style: solid;border-right-width: 0px;padding-right: 40px;padding-left: 40px;">
                     <div class="media bb-1 border-fade">
-                        <img class="avatar avatar-lg" src="{{ (!empty($comment->user->image))? url('upload/user_images/'.$comment->user->image):url('upload/no_image.jpg') }} " alt="User Avatar">
+                        <img class="avatar avatar-lg"
+                            src="{{ (!empty($comment->user->image))? url('upload/user_images/'.$comment->user->image):url('upload/no_image.jpg') }} "
+                            alt="User Avatar">
                         <div class="media-body">
                             <p>
-                                <strong><p>{{ $comment->user->name }}</p></strong>
-                                <time class="float-right text-fade" datetime="2017">{{ $comment->created_at->diffForHumans() }}</time>
+                                <strong>
+                                    <p>{{ $comment->user->name }}</p>
+                                </strong>
+                                <time class="float-right text-fade" datetime="2017">{{
+                                    $comment->created_at->diffForHumans() }}</time>
                             </p>
                             @php
-                                $role = $comment->user->roles->first()->name;
+                            $role = $comment->user->roles->first()->name;
                             @endphp
                             <p><small>{{ $role }}</small></p>
                         </div>
@@ -429,23 +451,23 @@
 
                     <div class="box-body bb-1 border-fade">
                         <p class="lead">{{ $comment->body }}</p>
-                        </div>
                     </div>
-
-                    @endforeach
-
                 </div>
 
-            
-                    
-                    
-                
-            </div>
-            <!-- /.box -->
+                @endforeach
 
-        </section>
+            </div>
+
+
+
+
 
     </div>
+    <!-- /.box -->
+
+    </section>
+
+</div>
 </div>
 <!-- /.content-wrapper -->
 

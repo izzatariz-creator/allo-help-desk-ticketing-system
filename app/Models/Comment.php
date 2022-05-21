@@ -18,6 +18,10 @@ class Comment extends Model
         return $this->belongsTo(User::class, 'user_id','id');
     }
 
+    public function ticket(){
+        return $this->belongsTo(Ticket::class, 'ticket_id','id');
+    }
+
     public function replies()
     {
         return $this->hasMany(Comment::class, 'parent_id');

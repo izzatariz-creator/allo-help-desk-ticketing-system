@@ -152,7 +152,7 @@ class TicketController extends Controller
                 'ticket_priority' => $request->priority,
             );
 
-            Mail::to('info@allo.com')->send(new NewTicketMail($data));
+            Mail::to('thd@allo.com')->send(new NewTicketMail($data));
         });
 
         $notification = array(
@@ -209,7 +209,7 @@ class TicketController extends Controller
             $sendtoemail = $data['user']['email'];
         }
         else{
-            $sendtoemail = 'info@allo.com';
+            $sendtoemail = 'thd@allo.com';
         }
 
         $ticketupdate = array(

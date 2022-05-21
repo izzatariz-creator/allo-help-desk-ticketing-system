@@ -225,6 +225,7 @@
 
                                     </div> <!-- End Row -->
 
+                                    @can('change status')
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
@@ -249,8 +250,8 @@
                                                 </div>
                                             </div>
                                         </div> <!-- End Col Md-6 -->
-
-                                </div> <!-- End Row -->
+                                    </div> <!-- End Row -->
+                                    @endcan
 
 
 

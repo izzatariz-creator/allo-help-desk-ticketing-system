@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend\Ticket;
 
 use App\Http\Controllers\Controller;
 use App\Mail\NewTicketMail;
+use App\Mail\TicketUpdateMail;
 use App\Models\Comment;
 use App\Models\Modem;
 use App\Models\RetailServiceProvider;
@@ -139,15 +140,19 @@ class TicketController extends Controller
             $ticket->modem_id = $request->modem_id;
             $ticket->router_id = $request->router_id;
 
+            $ticket->save();
+
+            $cat = $ticket['category']['name'];
+
             $data = array(
                 'ticket_user' => Auth::user()->name,
                 'ticket_title' => $request->title,
                 'ticket_desc' => $request->description,
+                'ticket_cat' => $cat,
+                'ticket_priority' => $request->priority,
             );
 
             Mail::to('info@allo.com')->send(new NewTicketMail($data));
-
-            $ticket->save();
         });
 
         $notification = array(
@@ -180,15 +185,40 @@ class TicketController extends Controller
         $data->title = $request->title;
         $data->category_id = $request->category_id;
         $data->description = $request->description;
-        $data->status = $request->status;
         $data->priority = $request->priority;
         $data->address = $request->address;
         $data->rsp_id = $request->rsp_id;
         $data->modem_id = $request->modem_id;
         $data->router_id = $request->router_id;
         $data->technician_id = $request->technician_id;
+
+        $currentstatus = $request->status;
+
+        if($currentstatus==NULL){
+            $data->status = "Open";
+        }
+        else{
+            $data->status = $request->status;
+        }
         
         $data->save();
+
+        $username = $data['user']['name'];
+
+        if(Auth::user()->hasAnyRole(['technician', 'admin'])){
+            $sendtoemail = $data['user']['email'];
+        }
+        else{
+            $sendtoemail = 'info@allo.com';
+        }
+
+        $ticketupdate = array(
+            'ticket_title' => $request->title,
+            'ticket_desc' => $request->description,
+            'ticket_user' => $username
+        );
+
+        Mail::send(new TicketUpdateMail($ticketupdate,$sendtoemail));
 
         $notification = array(
             'message' => 'Ticket Updated Successfully',

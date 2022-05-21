@@ -8,5 +8,5 @@
 <p>Ticket Description: {{ $ticketupdate['ticket_desc'] }}</p>
 
 Thanks,<br>
-{{ config('app.name') }}
+Allo Technical Help Desk
 @endcomponent

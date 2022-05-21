@@ -11,5 +11,5 @@
 <p>{{ $commentdata['comment_body'] }}</p>
 
 Thanks,<br>
-{{ config('app.name') }}
+Allo Technical Help Desk
 @endcomponent

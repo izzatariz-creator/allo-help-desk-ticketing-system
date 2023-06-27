@@ -1,4 +1,4 @@
-## Allo Help Desk Ticketing Management System
+## Allo Help Desk Ticketing System
 
 Allo HDTS is a web application developed with Laravel.
 

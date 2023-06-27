@@ -31,43 +31,42 @@ Allo HDTS is a web application developed with Laravel.
 ## Product Features
 
 Register
-    • This function will allow the unregistered user to register a new account. 
+<p>    • This function will allow the unregistered user to register a new account.</p>    
 Login
-    • This function will allow the registered user to log in to the system.
+<p>    • This function will allow the registered user to log in to the system.</p>
 Logout
-    • This function will allow the user to end access to the system.
+<p>    • This function will allow the user to end access to the system.</p>    
 View User
-    • This function will allow the system admin to view all registered users
+<p>    • This function will allow the system admin to view all registered users</p>    
 Add User
-    • This function will allow the system admin to add a user to the database.
+<p>    • This function will allow the system admin to add a user to the database.</p>    
 Edit User
-    • This function will allow the system admin to edit the user details.
+<p>    • This function will allow the system admin to edit the user details.</p>    
 Delete User
-    • This function will allow the system admin to delete a user from the database.
+<p>    • This function will allow the system admin to delete a user from the database.</p>    
 View Ticket
-    • This function will allow the user to view all tickets recorded in the database.
+<p>    • This function will allow the user to view all tickets recorded in the database.</p>    
 View Assigned Ticket
-    • This function will allow the technician to view all tickets that have been assigned to them.
+<p>    • This function will allow the technician to view all tickets that have been assigned to them.</p>    
 Search & Filter Ticket
-    • This function will allow the user to filter tickets according to one criterion or a 
-combination of criteria.
+<p>     This function will allow the user to filter tickets according to one criterion or a combination of criteria.</p>    •
 Add Ticket
-    • This function will allow the user to add a ticket.
+<p>    • This function will allow the user to add a ticket.</p>    
 View Specific Ticket
-    • This function will allow the user to view the details of a specific ticket.
+<p>    • This function will allow the user to view the details of a specific ticket.</p>    
 Comment
-    • This function will allow the user to add a comment on a specific ticket page.
+<p>    • This function will allow the user to add a comment on a specific ticket page.</p>    
 Edit Ticket
-    • This function will allow the user to edit the ticket details.
+<p>    • This function will allow the user to edit the ticket details.</p>    
 Export Ticket As PDF
-    • This function will allow the users to export the ticket as a pdf.
+<p>     • This function will allow the users to export the ticket as a pdf.</p>   
 Delete Ticket
-    • This function will allow the technician to delete tickets.
+<p>    • This function will allow the technician to delete tickets.</p>    
 Close Ticket
-    • This function will allow the technician to close tickets.
+<p>    • This function will allow the technician to close tickets.</p>    
 Generate Report By Date
-    • This function allows the technician to generate a report by date.
+<p>    • This function allows the technician to generate a report by date.</p>    
 Generate Report By Month & Year
-    • This function allows the technician to generate a report by month and year.
+<p>    • This function allows the technician to generate a report by month and year.</p>    
 Generate Report By Year
-    • This function allows the technician to generate a report by year
+<p>    • This function allows the technician to generate a report by year</p>    

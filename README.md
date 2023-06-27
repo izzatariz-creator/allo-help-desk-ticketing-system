@@ -1,64 +1,73 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+## Allo Help Desk Ticketing Management System
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Allo HDTS is a web application developed with Laravel.
 
-## About Laravel
+## Product Preview
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+**Ticket Management**
+![View Ticket Page](https://github.com/izzatariz-creator/allo-help-desk-ticketing-system/assets/74348344/1cf84b94-a962-41e1-a641-f1f49816d10a)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+**Ticket Creation**
+![Create Ticket Page](https://github.com/izzatariz-creator/allo-help-desk-ticketing-system/assets/74348344/0cc5e7cf-650c-4ed8-9233-0604d52bee78)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+**Admin Dashboard**
+![Dashboard](https://github.com/izzatariz-creator/allo-help-desk-ticketing-system/assets/74348344/019e924f-1ecf-401e-9d13-77b97dff4632)
 
-## Learning Laravel
+**Profile Management**
+![My Profile Page](https://github.com/izzatariz-creator/allo-help-desk-ticketing-system/assets/74348344/b53abcf1-4cad-4d84-8326-05ab2efba561)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+**Role Management**
+![View Role Page](https://github.com/izzatariz-creator/allo-help-desk-ticketing-system/assets/74348344/89305720-b56d-4cad-8224-c49015e00c14)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+**Permission Management**
+![View Permission Page](https://github.com/izzatariz-creator/allo-help-desk-ticketing-system/assets/74348344/65a9b204-8c92-446f-a7c9-a2070f41452b)
 
-## Laravel Sponsors
+**Comment**
+![Comment II](https://github.com/izzatariz-creator/allo-help-desk-ticketing-system/assets/74348344/17ee6128-a85b-44d3-b4c1-89471a15e3a6)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+**Report Generator**
+![Report Generator Page](https://github.com/izzatariz-creator/allo-help-desk-ticketing-system/assets/74348344/1849f906-af08-481e-a46a-744c207efed5)
 
-### Premium Partners
+## Product Features
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Register
+    • This function will allow the unregistered user to register a new account. 
+Login
+    • This function will allow the registered user to log in to the system.
+Logout
+    • This function will allow the user to end access to the system.
+View User
+    • This function will allow the system admin to view all registered users
+Add User
+    • This function will allow the system admin to add a user to the database.
+Edit User
+    • This function will allow the system admin to edit the user details.
+Delete User
+    • This function will allow the system admin to delete a user from the database.
+View Ticket
+    • This function will allow the user to view all tickets recorded in the database.
+View Assigned Ticket
+    • This function will allow the technician to view all tickets that have been assigned to them.
+Search & Filter Ticket
+    • This function will allow the user to filter tickets according to one criterion or a 
+combination of criteria.
+Add Ticket
+    • This function will allow the user to add a ticket.
+View Specific Ticket
+    • This function will allow the user to view the details of a specific ticket.
+Comment
+    • This function will allow the user to add a comment on a specific ticket page.
+Edit Ticket
+    • This function will allow the user to edit the ticket details.
+Export Ticket As PDF
+    • This function will allow the users to export the ticket as a pdf.
+Delete Ticket
+    • This function will allow the technician to delete tickets.
+Close Ticket
+    • This function will allow the technician to close tickets.
+Generate Report By Date
+    • This function allows the technician to generate a report by date.
+Generate Report By Month & Year
+    • This function allows the technician to generate a report by month and year.
+Generate Report By Year
+    • This function allows the technician to generate a report by year
